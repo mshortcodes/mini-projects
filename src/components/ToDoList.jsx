@@ -20,7 +20,7 @@ function ToDoList() {
 
 					<ul
 						id='taskList'
-						className='list-inside list-disc mt-2 text-neutral-50 text-left'>
+						className='list-inside list-disc mt-2 text-neutral-50 text-left text-xl'>
 						<li>hi</li>
 					</ul>
 				</div>
