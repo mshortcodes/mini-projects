@@ -8,11 +8,11 @@ import CurrencyConverter from './components/CurrencyConverter.jsx';
 function App() {
 	return (
 		<>
-			{/* <Home />
+			{/* <Home /> */}
 			<ToDoList />
-			<TicTacToe />
-			<WeatherApp /> */}
-			<CurrencyConverter />
+			{/* <TicTacToe /> */}
+			{/* <WeatherApp /> */}
+			{/* <CurrencyConverter /> */}
 		</>
 	);
 }
