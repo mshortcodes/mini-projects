@@ -11,17 +11,13 @@ function TicTacToe() {
 				<div className='flex-1 max-w-xs'>
 					<div
 						id='board'
-						className='grid grid-rows-3 grid-cols-3 border border-neutral-50 cursor-pointer text-center text-4xl mb-2'>
+						className='grid grid-rows-3 grid-cols-3 h-60 border cursor-pointer text-center text-4xl mb-2'>
 						<div
 							id='cell-1'
-							className='border border-neutral-50 p-4 hover:ring hover:ring-yellow-400'>
-							✖️
-						</div>
+							className='border border-neutral-50 p-4 hover:ring hover:ring-yellow-400'></div>
 						<div
 							id='cell-2'
-							className='border border-neutral-50 p-4 hover:ring hover:ring-yellow-400'>
-							⭕
-						</div>
+							className='border border-neutral-50 p-4 hover:ring hover:ring-yellow-400'></div>
 						<div
 							id='cell-3'
 							className='border border-neutral-50 p-4 hover:ring hover:ring-yellow-400'></div>
