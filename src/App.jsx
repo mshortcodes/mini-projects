@@ -9,9 +9,9 @@ function App() {
 	return (
 		<>
 			{/* <Home /> */}
-			<ToDoList />
+			{/* <ToDoList /> */}
 			{/* <TicTacToe /> */}
-			{/* <WeatherApp /> */}
+			<WeatherApp />
 			{/* <CurrencyConverter /> */}
 		</>
 	);

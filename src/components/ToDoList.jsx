@@ -60,9 +60,7 @@ function ToDoList() {
 						</button>
 					</div>
 
-					<ul
-						id='taskList'
-						className='list-inside list-disc mt-2 h-0'>
+					<ul className='list-inside list-disc mt-2 h-0'>
 						{tasks.map((task, index) => (
 							<li key={index} className='text-neutral-50'>
 								{task}
