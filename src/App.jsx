@@ -4,6 +4,7 @@ import TicTacToe from './components/TicTacToe.jsx';
 import ToDoList from './components/ToDoList.jsx';
 import WeatherApp from './components/WeatherApp.jsx';
 import CurrencyConverter from './components/CurrencyConverter.jsx';
+import Flashcards from './components/Flashcards.jsx';
 
 function App() {
 	return (
@@ -11,8 +12,9 @@ function App() {
 			{/* <Home /> */}
 			{/* <ToDoList /> */}
 			{/* <TicTacToe /> */}
-			<WeatherApp />
+			{/* <WeatherApp /> */}
 			{/* <CurrencyConverter /> */}
+			<Flashcards />
 		</>
 	);
 }

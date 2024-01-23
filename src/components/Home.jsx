@@ -12,7 +12,7 @@ function Home() {
 							✖️
 						</div>
 						<div className='text-4xl border-2 border-neutral-50 rounded-lg p-4 m-2 hover:shadow-md hover:shadow-yellow-400'>
-							⚡
+							🌦️
 						</div>
 						<div className='text-4xl border-2 border-neutral-50 rounded-lg p-4 m-2 hover:shadow-md hover:shadow-yellow-400'>
 							📝
@@ -23,7 +23,7 @@ function Home() {
 							💵
 						</div>
 						<div className='text-4xl border-2 border-neutral-50 rounded-lg p-4 m-2 hover:shadow-md hover:shadow-yellow-400'>
-							🖌️
+							📰
 						</div>
 					</div>
 				</div>
