@@ -59,7 +59,7 @@ function Flashcards() {
 				<div className='flex-1 max-w-xs flex flex-col justify-center items-center'>
 					<div
 						onClick={toggleShowAnswer}
-						className='flex items-center justify-center h-40 ring ring-yellow-400 rounded w-11/12'>
+						className='flex items-center justify-center h-40 ring ring-yellow-400 rounded w-11/12 cursor-pointer'>
 						<p
 							className={`text-neutral-50 text-center ${
 								showAnswer ? 'text-8xl' : ''
@@ -69,11 +69,15 @@ function Flashcards() {
 								: flashcards[currentFlashCard].question}
 						</p>
 					</div>
-					<div className='flex p-1'>
-						<p onClick={previousFlashCard} className='text-2xl'>
+					<div className='flex p-2'>
+						<p
+							onClick={previousFlashCard}
+							className='text-3xl cursor-pointer'>
 							⬅️
 						</p>
-						<p onClick={nextFlashCard} className='text-2xl'>
+						<p
+							onClick={nextFlashCard}
+							className='text-3xl cursor-pointer'>
 							➡️
 						</p>
 					</div>
