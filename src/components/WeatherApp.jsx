@@ -7,6 +7,19 @@ const convertTemp = (kelvin) => {
 	return Math.round((kelvin - 273.15) * (9 / 5) + 32);
 };
 
+const weatherEmojis = {
+	thunder: '🌩️',
+	thunderRain: '⛈️',
+	rain: '🌧️',
+	rainSun: '🌦️',
+	snow: '🌨️',
+	atmosphere: '🌫️',
+	sun: '☀️',
+	cloud: '☁️',
+	cloudSun: '⛅',
+	unknown: '❓',
+};
+
 const WeatherApp = () => {
 	// store location input value
 	const [locationInput, setLocationInput] = useState('');
@@ -35,6 +48,35 @@ const WeatherApp = () => {
 	const handleKeyDown = (e) => {
 		if (e.key === 'Enter') {
 			handleSearch();
+		}
+	};
+
+	// get correct weather emoji
+	const getWeatherEmoji = (weatherId) => {
+		if (weatherId >= 200 && weatherId <= 202) {
+			return weatherEmojis.thunderRain;
+		} else if (weatherId >= 210 && weatherId <= 221) {
+			return weatherEmojis.thunder;
+		} else if (weatherId >= 230 && weatherId <= 232) {
+			return weatherEmojis.thunderRain;
+		} else if (weatherId >= 300 && weatherId <= 321) {
+			return weatherEmojis.rain;
+		} else if (weatherId >= 500 && weatherId <= 504) {
+			return weatherEmojis.rainSun;
+		} else if (weatherId >= 511 && weatherId <= 531) {
+			return weatherEmojis.rain;
+		} else if (weatherId >= 600 && weatherId <= 622) {
+			return weatherEmojis.snow;
+		} else if (weatherId >= 701 && weatherId <= 781) {
+			return weatherEmojis.atmosphere;
+		} else if (weatherId == 500) {
+			return weatherEmojis.sun;
+		} else if (weatherId == 801) {
+			return weatherEmojis.cloudSun;
+		} else if (weatherId >= 802 && weatherId <= 804) {
+			return weatherEmojis.cloud;
+		} else {
+			return weatherEmojis.unknown;
 		}
 	};
 
@@ -100,9 +142,11 @@ const WeatherApp = () => {
 							<p className='text-neutral-50 text-5xl text-center'>
 								{convertTemp(weatherData.main.temp)}­°F
 							</p>
-							<div className='text-8xl text-center pb-2'>🌦️</div>
+							<div className='text-8xl text-center pb-2'>
+								{getWeatherEmoji(weatherData.weather[0].id)}
+							</div>
 							<p className='text-neutral-50 text-center'>
-								{weatherData.weather[0].description}
+								{weatherData.weather[0].main}
 							</p>
 						</>
 					)}
