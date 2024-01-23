@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 const apiKey = 'bdae93b08c4f760b6b5bb77ea39da727';
-const country = 'US';
 
 const convertTemp = (kelvin) => {
 	return Math.round((kelvin - 273.15) * (9 / 5) + 32);
@@ -69,7 +68,7 @@ const WeatherApp = () => {
 			return weatherEmojis.snow;
 		} else if (weatherId >= 701 && weatherId <= 781) {
 			return weatherEmojis.atmosphere;
-		} else if (weatherId == 500) {
+		} else if (weatherId == 800) {
 			return weatherEmojis.sun;
 		} else if (weatherId == 801) {
 			return weatherEmojis.cloudSun;
@@ -81,7 +80,7 @@ const WeatherApp = () => {
 	};
 
 	// function to fetch weather data
-	const getWeather = async (city, state) => {
+	const getWeather = async (city, state, country = 'US') => {
 		try {
 			// API URL to get longitude and latitude
 			const geocodingApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&limit=1&appid=${apiKey}`;
