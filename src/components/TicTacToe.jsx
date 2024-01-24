@@ -46,7 +46,7 @@ function TicTacToe() {
 	let status;
 
 	if (winner) {
-		status = `${winner} wins!`;
+		status = `🏆: ${winner}`;
 	} else if (draw) {
 		status = `It's a draw!`;
 	} else {

@@ -59,9 +59,9 @@ function Flashcards() {
 				<div className='flex-1 max-w-xs flex flex-col justify-center items-center'>
 					<div
 						onClick={toggleShowAnswer}
-						className='flex items-center justify-center h-40 ring ring-yellow-400 rounded w-11/12 cursor-pointer'>
+						className='flex items-center justify-center bg-black h-40 ring ring-yellow-400 rounded w-11/12 cursor-pointer'>
 						<p
-							className={`text-neutral-50 text-center ${
+							className={`text-neutral-50 text-center p-4 bg-black ${
 								showAnswer ? 'text-8xl' : ''
 							}`}>
 							{showAnswer

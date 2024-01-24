@@ -11,10 +11,10 @@ function App() {
 		<>
 			{/* <Home /> */}
 			{/* <ToDoList /> */}
-			{/* <TicTacToe /> */}
+			<TicTacToe />
 			{/* <WeatherApp /> */}
 			{/* <CurrencyConverter /> */}
-			<Flashcards />
+			{/* <Flashcards /> */}
 		</>
 	);
 }
