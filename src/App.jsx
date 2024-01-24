@@ -9,12 +9,12 @@ import Flashcards from './components/Flashcards.jsx';
 function App() {
 	return (
 		<>
-			{/* <Home /> */}
-			{/* <ToDoList /> */}
+			<Home />
+			<ToDoList />
 			<TicTacToe />
-			{/* <WeatherApp /> */}
-			{/* <CurrencyConverter /> */}
-			{/* <Flashcards /> */}
+			<WeatherApp />
+			<CurrencyConverter />
+			<Flashcards />
 		</>
 	);
 }

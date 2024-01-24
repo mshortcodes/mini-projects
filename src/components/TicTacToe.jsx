@@ -6,7 +6,7 @@ function Square({ value, onSquareClick }) {
 	return (
 		<div
 			onClick={onSquareClick}
-			className='border border-neutral-50 p-4 hover:ring hover:ring-yellow-400'>
+			className='border border-neutral-50 p-4 hover:bg-black hover:ring hover:ring-yellow-400'>
 			{value}
 		</div>
 	);
