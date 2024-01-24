@@ -111,7 +111,7 @@ function TicTacToe() {
 							<img
 								onClick={resetGame}
 								src={resetArrows}
-								className='w-8 cursor-pointer filter invert'
+								className='w-8 cursor-pointer filter invert hover:opacity-75'
 							/>
 						</div>
 					</div>

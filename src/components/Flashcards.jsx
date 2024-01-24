@@ -72,12 +72,12 @@ function Flashcards() {
 					<div className='flex p-2'>
 						<p
 							onClick={previousFlashCard}
-							className='text-3xl cursor-pointer'>
+							className='text-3xl cursor-pointer hover:opacity-75'>
 							⬅️
 						</p>
 						<p
 							onClick={nextFlashCard}
-							className='text-3xl cursor-pointer'>
+							className='text-3xl cursor-pointer hover:opacity-75'>
 							➡️
 						</p>
 					</div>

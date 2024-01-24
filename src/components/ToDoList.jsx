@@ -50,12 +50,12 @@ function ToDoList() {
 					<div className='justify-between flex'>
 						<button
 							onClick={handleAddTask}
-							className='bg-green-500 p-1 mr-2 mt-2 rounded-lg flex-1 text-neutral-950'>
+							className='bg-green-500 p-1 mr-2 mt-2 rounded-lg flex-1 text-neutral-950 hover:opacity-75'>
 							Add Task
 						</button>
 						<button
 							onClick={handleDeleteTask}
-							className='bg-red-500 p-1 ml-2 mt-2 rounded-lg flex-1 text-neutral-950'>
+							className='bg-red-500 p-1 ml-2 mt-2 rounded-lg flex-1 text-neutral-950 hover:opacity-75'>
 							Delete Task
 						</button>
 					</div>
