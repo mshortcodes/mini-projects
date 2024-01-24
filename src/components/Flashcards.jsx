@@ -61,7 +61,7 @@ function Flashcards() {
 						onClick={toggleShowAnswer}
 						className='flex items-center justify-center bg-black h-40 ring ring-yellow-400 rounded w-11/12 cursor-pointer'>
 						<p
-							className={`text-neutral-50 text-center p-4 bg-black ${
+							className={`text-neutral-50 text-center p-4 bg-black selection:bg-transparent ${
 								showAnswer ? 'text-8xl' : ''
 							}`}>
 							{showAnswer

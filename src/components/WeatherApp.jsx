@@ -128,7 +128,7 @@ const WeatherApp = () => {
 							className='w-full border border-neutral-50 bg-transparent p-1 rounded-lg text-neutral-50'></input>
 						<div
 							onClick={handleSearch}
-							className='absolute right-2 top-0 cursor-pointer text-2xl'>
+							className='absolute right-2 top-0 cursor-pointer text-2xl hover:opacity-75 selection:bg-transparent'>
 							🔍
 						</div>
 					</div>
