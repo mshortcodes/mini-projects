@@ -5,3 +5,9 @@
 body {
 	@apply bg-neutral-800;
 }
+
+@layer utilities {
+	.text-trophy-xl {
+		font-size: 20rem;
+	}
+}
