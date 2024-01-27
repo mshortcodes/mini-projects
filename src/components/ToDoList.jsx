@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import chevronRight from '../assets/chevronRight.svg';
 import chevronLeft from '../assets/chevronLeft.svg';
 
 function ToDoList() {
@@ -43,20 +42,14 @@ function ToDoList() {
 
 	return (
 		<div className='flex flex-col items-center h-screen'>
-			<div className='max-w-xs w-full pt-16 flex justify-between absolute'>
-				<Link to='/'>
+			<div className='max-w-xs w-full pt-16 flex justify-center absolute'>
+				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
 						className='w-8 filter invert hover:opacity-75 cursor-pointer'
 					/>
 				</Link>
-				<h1 className='text-neutral-50 text-xl'>To-Do List</h1>
-				<Link to='/tic-tac-toe'>
-					<img
-						src={chevronRight}
-						className='w-8 filter invert hover:opacity-75 cursor-pointer'
-					/>
-				</Link>
+				<h1 className='text-neutral-50 text-xl absolute'>To-Do List</h1>
 			</div>
 
 			<div className='flex flex-col justify-center flex-1 max-w-xs w-full'>

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import chevronRight from '../assets/chevronRight.svg';
 import chevronLeft from '../assets/chevronLeft.svg';
 import resetArrows from '../assets/resetArrows.svg';
 
@@ -9,8 +8,8 @@ function Square({ value, onSquareClick, isWinner }) {
 	return (
 		<div
 			onClick={onSquareClick}
-			className={`border border-neutral-50 p-4 hover:bg-black hover:ring hover:ring-yellow-400 selection:bg-transparent ${
-				isWinner ? 'bg-black ring ring-yellow-400' : ''
+			className={`border border-neutral-50 p-4 hover:bg-neutral-950 hover:ring hover:ring-yellow-400 selection:bg-transparent ${
+				isWinner ? 'bg-neutral-950 ring ring-yellow-400' : ''
 			}`}>
 			{value}
 		</div>
@@ -65,20 +64,16 @@ function TicTacToe() {
 
 	return (
 		<div className='flex flex-col items-center h-screen'>
-			<div className='max-w-xs w-full pt-16 flex justify-between absolute'>
-				<Link to='/'>
+			<div className='max-w-xs w-full pt-16 flex justify-center absolute'>
+				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
 						className='w-8 filter invert hover:opacity-75 cursor-pointer'
 					/>
 				</Link>
-				<h1 className='text-neutral-50 text-xl'>Tic-Tac-Toe</h1>
-				<Link to='/weather-app'>
-					<img
-						src={chevronRight}
-						className='w-8 filter invert hover:opacity-75 cursor-pointer'
-					/>
-				</Link>
+				<h1 className='text-neutral-50 text-xl absolute'>
+					Tic-Tac-Toe
+				</h1>
 			</div>
 
 			<div className='flex flex-col justify-center flex-1 max-w-xs w-full'>

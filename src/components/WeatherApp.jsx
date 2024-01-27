@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import chevronRight from '../assets/chevronRight.svg';
 import chevronLeft from '../assets/chevronLeft.svg';
+import arrowUp from '../assets/arrowUp.svg';
+import arrowDown from '../assets/arrowUp.svg';
 
 const apiKey = 'bdae93b08c4f760b6b5bb77ea39da727';
 
@@ -116,20 +117,16 @@ const WeatherApp = () => {
 
 	return (
 		<div className='flex flex-col items-center h-screen'>
-			<div className='max-w-xs w-full pt-16 flex justify-between absolute'>
-				<Link to='/'>
+			<div className='max-w-xs w-full pt-16 flex justify-center absolute'>
+				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
 						className='w-8 filter invert hover:opacity-75 cursor-pointer'
 					/>
 				</Link>
-				<h1 className='text-neutral-50 text-xl'>Weather App</h1>
-				<Link to='/memory-card-game'>
-					<img
-						src={chevronRight}
-						className='w-8 filter invert hover:opacity-75 cursor-pointer'
-					/>
-				</Link>
+				<h1 className='text-neutral-50 text-xl absolute'>
+					Weather App
+				</h1>
 			</div>
 
 			<div className='flex flex-col justify-center flex-1 max-w-xs w-full'>
@@ -148,14 +145,13 @@ const WeatherApp = () => {
 				</div>
 				{weatherData && (
 					<>
-						<p>{console.log('test')}</p>
-						<p className='text-neutral-50 text-center'>
+						<p className='text-neutral-50 text-center p-1'>
 							{weatherData.name}
 						</p>
 						<p className='text-neutral-50 text-5xl text-center'>
 							{convertTemp(weatherData.main.temp)}­°F
 						</p>
-						<div className='text-8xl text-center pb-2'>
+						<div className='text-8xl text-center pb-1'>
 							{getWeatherEmoji(weatherData.weather[0].id)}
 						</div>
 						<p className='text-neutral-50 text-center'>

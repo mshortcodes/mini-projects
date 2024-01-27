@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import chevronRight from '../assets/chevronRight.svg';
 import chevronLeft from '../assets/chevronLeft.svg';
-import resetArrows from '../assets/resetArrows.svg';
 
 function Flashcards() {
 	const flashcards = [
@@ -61,28 +59,22 @@ function Flashcards() {
 
 	return (
 		<div className='flex flex-col items-center h-screen'>
-			<div className='max-w-xs w-full pt-16 flex justify-between absolute'>
-				<Link to='/'>
+			<div className='max-w-xs w-full pt-16 flex justify-center absolute'>
+				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
 						className='w-8 filter invert hover:opacity-75 cursor-pointer'
 					/>
 				</Link>
-				<h1 className='text-neutral-50 text-xl'>Flashcards</h1>
-				<Link to='/'>
-					<img
-						src={chevronRight}
-						className='w-8 filter invert hover:opacity-75 cursor-pointer'
-					/>
-				</Link>
+				<h1 className='text-neutral-50 text-xl absolute'>Flashcards</h1>
 			</div>
 
 			<div className='flex flex-col justify-center items-center flex-1 max-w-xs w-full'>
 				<div
 					onClick={toggleShowAnswer}
-					className='flex items-center justify-center bg-black h-40 ring ring-yellow-400 rounded w-11/12 cursor-pointer'>
+					className='flex items-center justify-center bg-neutral-950 h-40 ring ring-yellow-400 rounded w-11/12 cursor-pointer'>
 					<p
-						className={`text-neutral-50 text-center p-4 bg-black selection:bg-transparent ${
+						className={`text-neutral-50 text-center p-4 bg-neutral-950 selection:bg-transparent ${
 							showAnswer ? 'text-8xl' : ''
 						}`}>
 						{showAnswer
@@ -93,12 +85,12 @@ function Flashcards() {
 				<div className='flex p-2'>
 					<p
 						onClick={previousFlashCard}
-						className='text-3xl cursor-pointer hover:opacity-75 selection:bg-transparent'>
+						className='text-4xl cursor-pointer hover:opacity-75 selection:bg-transparent'>
 						⬅️
 					</p>
 					<p
 						onClick={nextFlashCard}
-						className='text-3xl cursor-pointer hover:opacity-75 selection:bg-transparent'>
+						className='text-4xl cursor-pointer hover:opacity-75 selection:bg-transparent'>
 						➡️
 					</p>
 				</div>
