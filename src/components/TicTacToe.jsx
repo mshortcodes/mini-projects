@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import chevronRight from '../assets/chevronRight.svg';
+import chevronLeft from '../assets/chevronLeft.svg';
 import resetArrows from '../assets/resetArrows.svg';
 
 // define Square component
@@ -61,74 +64,84 @@ function TicTacToe() {
 	}
 
 	return (
-		<>
-			<h1 className='text-neutral-50 text-xl text-center pt-32 absolute w-screen'>
-				Tic-Tac-Toe
-			</h1>
+		<div className='flex flex-col items-center h-screen'>
+			<div className='max-w-xs w-full pt-16 flex justify-between absolute'>
+				<Link to='/'>
+					<img
+						src={chevronLeft}
+						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+					/>
+				</Link>
+				<h1 className='text-neutral-50 text-xl'>Tic-Tac-Toe</h1>
+				<Link to='/weather-app'>
+					<img
+						src={chevronRight}
+						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+					/>
+				</Link>
+			</div>
 
-			<div className='flex justify-center items-center h-screen w-screen'>
-				<div className='flex-1 max-w-xs'>
-					<div className='grid grid-rows-3 grid-cols-3 h-60 border cursor-pointer text-center text-4xl mb-2'>
-						<Square
-							value={squares[0]}
-							onSquareClick={() => handleClick(0)}
-							isWinner={winner && winner.includes(0)}
-						/>
-						<Square
-							value={squares[1]}
-							onSquareClick={() => handleClick(1)}
-							isWinner={winner && winner.includes(1)}
-						/>
-						<Square
-							value={squares[2]}
-							onSquareClick={() => handleClick(2)}
-							isWinner={winner && winner.includes(2)}
-						/>
-						<Square
-							value={squares[3]}
-							onSquareClick={() => handleClick(3)}
-							isWinner={winner && winner.includes(3)}
-						/>
-						<Square
-							value={squares[4]}
-							onSquareClick={() => handleClick(4)}
-							isWinner={winner && winner.includes(4)}
-						/>
-						<Square
-							value={squares[5]}
-							onSquareClick={() => handleClick(5)}
-							isWinner={winner && winner.includes(5)}
-						/>
-						<Square
-							value={squares[6]}
-							onSquareClick={() => handleClick(6)}
-							isWinner={winner && winner.includes(6)}
-						/>
-						<Square
-							value={squares[7]}
-							onSquareClick={() => handleClick(7)}
-							isWinner={winner && winner.includes(7)}
-						/>
-						<Square
-							value={squares[8]}
-							onSquareClick={() => handleClick(8)}
-							isWinner={winner && winner.includes(8)}
-						/>
-					</div>
+			<div className='flex flex-col justify-center flex-1 max-w-xs w-full'>
+				<div className='grid grid-rows-3 grid-cols-3 h-60 border cursor-pointer text-center text-4xl mb-2'>
+					<Square
+						value={squares[0]}
+						onSquareClick={() => handleClick(0)}
+						isWinner={winner && winner.includes(0)}
+					/>
+					<Square
+						value={squares[1]}
+						onSquareClick={() => handleClick(1)}
+						isWinner={winner && winner.includes(1)}
+					/>
+					<Square
+						value={squares[2]}
+						onSquareClick={() => handleClick(2)}
+						isWinner={winner && winner.includes(2)}
+					/>
+					<Square
+						value={squares[3]}
+						onSquareClick={() => handleClick(3)}
+						isWinner={winner && winner.includes(3)}
+					/>
+					<Square
+						value={squares[4]}
+						onSquareClick={() => handleClick(4)}
+						isWinner={winner && winner.includes(4)}
+					/>
+					<Square
+						value={squares[5]}
+						onSquareClick={() => handleClick(5)}
+						isWinner={winner && winner.includes(5)}
+					/>
+					<Square
+						value={squares[6]}
+						onSquareClick={() => handleClick(6)}
+						isWinner={winner && winner.includes(6)}
+					/>
+					<Square
+						value={squares[7]}
+						onSquareClick={() => handleClick(7)}
+						isWinner={winner && winner.includes(7)}
+					/>
+					<Square
+						value={squares[8]}
+						onSquareClick={() => handleClick(8)}
+						isWinner={winner && winner.includes(8)}
+					/>
+				</div>
 
-					<div className='flex justify-between items-center'>
-						<div className='text-neutral-50 text-xl'>{status}</div>
-						<div>
-							<img
-								onClick={resetGame}
-								src={resetArrows}
-								className='w-8 cursor-pointer filter invert hover:opacity-75'
-							/>
-						</div>
+				<div className='flex justify-between items-center'>
+					<div className='text-neutral-50 text-xl'>{status}</div>
+					<div>
+						<img
+							onClick={resetGame}
+							src={resetArrows}
+							className='w-8 cursor-pointer filter invert hover:opacity-75'
+						/>
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

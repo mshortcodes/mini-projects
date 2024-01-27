@@ -1,21 +1,28 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home.jsx';
-import TicTacToe from './components/TicTacToe.jsx';
 import ToDoList from './components/ToDoList.jsx';
+import TicTacToe from './components/TicTacToe.jsx';
 import WeatherApp from './components/WeatherApp.jsx';
 import MemoryCardGame from './components/MemoryCardGame.jsx';
 import Flashcards from './components/Flashcards.jsx';
 
 function App() {
 	return (
-		<>
-			{/* <Home /> */}
-			<ToDoList />
-			{/* <TicTacToe /> */}
-			{/* <WeatherApp /> */}
-			{/* <MemoryCardGame /> */}
-			{/* <Flashcards /> */}
-		</>
+		<BrowserRouter>
+			<>
+				<Routes>
+					<Route path='/' element={<Home />}></Route>
+					<Route path='/to-do-list' element={<ToDoList />}></Route>
+					<Route path='/tic-tac-toe' element={<TicTacToe />}></Route>
+					<Route path='/weather-app' element={<WeatherApp />}></Route>
+					<Route
+						path='/memory-card-game'
+						element={<MemoryCardGame />}></Route>
+					<Route path='/flashcards' element={<Flashcards />}></Route>
+				</Routes>
+			</>
+		</BrowserRouter>
 	);
 }
 

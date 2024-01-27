@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import chevronRight from '../assets/chevronRight.svg';
+import chevronLeft from '../assets/chevronLeft.svg';
 
 function ToDoList() {
 	const [taskInput, setTaskInput] = useState();
@@ -39,13 +42,25 @@ function ToDoList() {
 	};
 
 	return (
-		<>
-			<h1 className='text-neutral-50 text-xl text-center pt-32 absolute w-screen'>
-				To-Do List
-			</h1>
+		<div className='flex flex-col items-center h-screen'>
+			<div className='max-w-xs w-full pt-16 flex justify-between absolute'>
+				<Link to='/'>
+					<img
+						src={chevronLeft}
+						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+					/>
+				</Link>
+				<h1 className='text-neutral-50 text-xl'>To-Do List</h1>
+				<Link to='/tic-tac-toe'>
+					<img
+						src={chevronRight}
+						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+					/>
+				</Link>
+			</div>
 
-			<div className='flex justify-center items-center h-screen w-screen'>
-				<div className='flex-1 max-w-xs'>
+			<div className='flex flex-col justify-center flex-1 max-w-xs w-full'>
+				<div className='flex flex-col'>
 					<input
 						value={taskInput}
 						onChange={handleInputChange}
@@ -65,12 +80,14 @@ function ToDoList() {
 						</button>
 					</div>
 
-					<ul className='mt-2'>
+					<ul className='mt-2 list-none h-0'>
 						{tasks.map((task, index) => (
 							<li
 								key={index}
 								className='text-neutral-50 bg-neutral-700 my-2 p-1 rounded-md flex justify-between'>
-								<span>{task}</span>
+								<span className='w-11/12 overflow-hidden'>
+									{task}
+								</span>
 								<span
 									onClick={() => {
 										handleDeleteEachTask(index);
@@ -83,7 +100,7 @@ function ToDoList() {
 					</ul>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

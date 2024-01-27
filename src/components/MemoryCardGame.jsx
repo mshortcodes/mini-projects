@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import chevronRight from '../assets/chevronRight.svg';
+import chevronLeft from '../assets/chevronLeft.svg';
 
 const Card = ({ value, onClick, isFlipped, isMatched }) => {
 	return (
@@ -26,7 +29,7 @@ const Trophy = () => {
 };
 
 const MemoryCardGame = () => {
-	const symbols = ['⭐', '🎂', '⚡', '❄️', '👑', '🍇', '🗝️', '🎈'];
+	const symbols = ['⭐', '🎂', '⚡', '❄️', '👑', '🍇', '🃏', '🎈'];
 	const [cards, setCards] = useState([]);
 	const [flippedCards, setFlippedCards] = useState([]);
 	const [matchedPairs, setMatchedPairs] = useState([]);
@@ -75,31 +78,41 @@ const MemoryCardGame = () => {
 	};
 
 	return (
-		<>
-			<h1 className='text-neutral-50 text-xl text-center pt-32 absolute w-screen'>
-				Memory Card Game
-			</h1>
-
-			<div className='flex justify-center items-center h-screen w-screen'>
-				<div className='flex-1 max-w-xs'>
-					{matchedPairs.length === cards.length ? (
-						<Trophy />
-					) : (
-						<div className='grid grid-rows-4 grid-cols-4 text-6xl gap-4'>
-							{cards.map((card, index) => (
-								<Card
-									value={card}
-									key={index}
-									isFlipped={flippedCards.includes(index)}
-									isMatched={matchedPairs.includes(index)}
-									onClick={() => handleClick(index)}
-								/>
-							))}
-						</div>
-					)}
-				</div>
+		<div className='flex flex-col items-center h-screen'>
+			<div className='max-w-xs w-full pt-16 flex justify-between absolute'>
+				<Link to='/'>
+					<img
+						src={chevronLeft}
+						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+					/>
+				</Link>
+				<h1 className='text-neutral-50 text-xl'>Memory Card Game</h1>
+				<Link to='/flashcards'>
+					<img
+						src={chevronRight}
+						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+					/>
+				</Link>
 			</div>
-		</>
+
+			<div className='flex flex-col justify-center flex-1 max-w-xs w-full'>
+				{matchedPairs.length === cards.length ? (
+					<Trophy />
+				) : (
+					<div className='grid grid-rows-4 grid-cols-4 text-6xl gap-4'>
+						{cards.map((card, index) => (
+							<Card
+								value={card}
+								key={index}
+								isFlipped={flippedCards.includes(index)}
+								isMatched={matchedPairs.includes(index)}
+								onClick={() => handleClick(index)}
+							/>
+						))}
+					</div>
+				)}
+			</div>
+		</div>
 	);
 };
 
