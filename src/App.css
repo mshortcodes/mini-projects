@@ -8,6 +8,6 @@ body {
 
 @layer utilities {
 	.text-trophy-xl {
-		font-size: 20rem;
+		font-size: 10rem;
 	}
 }

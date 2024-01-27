@@ -2,11 +2,13 @@ import { useState } from 'react';
 import resetArrows from '../assets/resetArrows.svg';
 
 // define Square component
-function Square({ value, onSquareClick }) {
+function Square({ value, onSquareClick, isWinner }) {
 	return (
 		<div
 			onClick={onSquareClick}
-			className='border border-neutral-50 p-4 hover:bg-black hover:ring hover:ring-yellow-400 selection:bg-transparent'>
+			className={`border border-neutral-50 p-4 hover:bg-black hover:ring hover:ring-yellow-400 selection:bg-transparent ${
+				isWinner ? 'bg-black ring ring-yellow-400' : ''
+			}`}>
 			{value}
 		</div>
 	);
@@ -46,7 +48,7 @@ function TicTacToe() {
 	let status;
 
 	if (winner) {
-		status = `🏆: ${winner}`;
+		status = `👑: ${squares[winner[0]]}`;
 	} else if (draw) {
 		status = `It's a draw!`;
 	} else {
@@ -70,38 +72,47 @@ function TicTacToe() {
 						<Square
 							value={squares[0]}
 							onSquareClick={() => handleClick(0)}
+							isWinner={winner && winner.includes(0)}
 						/>
 						<Square
 							value={squares[1]}
 							onSquareClick={() => handleClick(1)}
+							isWinner={winner && winner.includes(1)}
 						/>
 						<Square
 							value={squares[2]}
 							onSquareClick={() => handleClick(2)}
+							isWinner={winner && winner.includes(2)}
 						/>
 						<Square
 							value={squares[3]}
 							onSquareClick={() => handleClick(3)}
+							isWinner={winner && winner.includes(3)}
 						/>
 						<Square
 							value={squares[4]}
 							onSquareClick={() => handleClick(4)}
+							isWinner={winner && winner.includes(4)}
 						/>
 						<Square
 							value={squares[5]}
 							onSquareClick={() => handleClick(5)}
+							isWinner={winner && winner.includes(5)}
 						/>
 						<Square
 							value={squares[6]}
 							onSquareClick={() => handleClick(6)}
+							isWinner={winner && winner.includes(6)}
 						/>
 						<Square
 							value={squares[7]}
 							onSquareClick={() => handleClick(7)}
+							isWinner={winner && winner.includes(7)}
 						/>
 						<Square
 							value={squares[8]}
 							onSquareClick={() => handleClick(8)}
+							isWinner={winner && winner.includes(8)}
 						/>
 					</div>
 
@@ -122,6 +133,7 @@ function TicTacToe() {
 }
 
 // use indices to check for all possible winning combinations
+// takes in the squares array and returns an array of the winning indices
 function calculateWinner(squares) {
 	const lines = [
 		[0, 1, 2],
@@ -140,7 +152,7 @@ function calculateWinner(squares) {
 			squares[a] === squares[b] &&
 			squares[a] === squares[c]
 		) {
-			return squares[a];
+			return [a, b, c];
 		}
 	}
 	return null;

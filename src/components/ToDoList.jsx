@@ -33,6 +33,11 @@ function ToDoList() {
 		});
 	};
 
+	// updates tasks array to include everything except the one clicked
+	const handleDeleteEachTask = (index) => {
+		setTasks((prevTasks) => prevTasks.filter((_, i) => i !== index));
+	};
+
 	return (
 		<>
 			<h1 className='text-neutral-50 text-xl text-center pt-32 absolute w-screen'>
@@ -60,10 +65,19 @@ function ToDoList() {
 						</button>
 					</div>
 
-					<ul className='list-inside list-disc mt-2 h-0'>
+					<ul className='mt-2'>
 						{tasks.map((task, index) => (
-							<li key={index} className='text-neutral-50'>
-								{task}
+							<li
+								key={index}
+								className='text-neutral-50 bg-neutral-700 my-2 p-1 rounded-md flex justify-between'>
+								<span>{task}</span>
+								<span
+									onClick={() => {
+										handleDeleteEachTask(index);
+									}}
+									className='text-xl cursor-pointer hover:opacity-75 leading-none'>
+									❌
+								</span>
 							</li>
 						))}
 					</ul>

@@ -17,7 +17,12 @@ const Card = ({ value, onClick, isFlipped, isMatched }) => {
 };
 
 const Trophy = () => {
-	return <div className='flex justify-center text-trophy-xl'>🏆</div>;
+	return (
+		<div className='flex items-center flex-col'>
+			<span className='text-trophy-xl animate-bounce'>🏆</span>
+			<p className='text-xl text-neutral-50'>🎉 Congratulations! 🎉</p>
+		</div>
+	);
 };
 
 const MemoryCardGame = () => {

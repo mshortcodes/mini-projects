@@ -10,10 +10,10 @@ function App() {
 	return (
 		<>
 			{/* <Home /> */}
-			{/* <ToDoList /> */}
+			<ToDoList />
 			{/* <TicTacToe /> */}
 			{/* <WeatherApp /> */}
-			<MemoryCardGame />
+			{/* <MemoryCardGame /> */}
 			{/* <Flashcards /> */}
 		</>
 	);
