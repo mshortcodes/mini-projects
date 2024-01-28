@@ -115,45 +115,45 @@ const WeatherApp = () => {
 	};
 
 	return (
-		<div className='flex flex-col items-center h-screen'>
-			<div className='max-w-xs w-full pt-16 flex justify-center absolute'>
+		<div className='flex h-screen flex-col items-center'>
+			<div className='absolute flex w-full max-w-xs justify-center pt-16'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
-						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+						className='w-8 cursor-pointer invert filter hover:opacity-75'
 					/>
 				</Link>
-				<h1 className='text-neutral-50 text-xl absolute'>
+				<h1 className='absolute text-xl text-neutral-50'>
 					Weather App
 				</h1>
 			</div>
 
-			<div className='flex flex-col justify-center flex-1 max-w-xs w-full'>
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center'>
 				<div className='relative'>
 					<input
 						value={locationInput}
 						onChange={handleLocationChange}
 						onKeyDown={handleKeyDown}
 						placeholder='city, state'
-						className='w-full border border-neutral-50 bg-transparent p-1 rounded-lg text-neutral-50'></input>
+						className='w-full rounded-lg border border-neutral-50 bg-transparent p-1 text-neutral-50'></input>
 					<div
 						onClick={handleSearch}
-						className='absolute right-2 top-0 cursor-pointer text-2xl hover:opacity-75 selection:bg-transparent'>
+						className='absolute right-2 top-0 cursor-pointer text-2xl selection:bg-transparent hover:opacity-75'>
 						🔍
 					</div>
 				</div>
 				{weatherData && (
 					<>
-						<p className='text-neutral-50 text-center p-1'>
+						<p className='p-1 text-center text-neutral-50'>
 							{weatherData.name}
 						</p>
-						<p className='text-neutral-50 text-5xl text-center'>
+						<p className='text-center text-5xl text-neutral-50'>
 							{convertTemp(weatherData.main.temp)}­°F
 						</p>
-						<div className='text-8xl text-center pb-1'>
+						<div className='pb-1 text-center text-8xl'>
 							{getWeatherEmoji(weatherData.weather[0].id)}
 						</div>
-						<p className='text-neutral-50 text-center pb-1'>
+						<p className='pb-1 text-center text-neutral-50'>
 							{weatherData.weather[0].main}
 						</p>
 						<div className='flex justify-center'>
@@ -161,28 +161,28 @@ const WeatherApp = () => {
 								xmlns='http://www.w3.org/2000/svg'
 								viewBox='0 0 24 24'
 								fill='currentColor'
-								className='w-6 h-6 fill-green-500'>
+								className='h-6 w-6 fill-green-500'>
 								<path
 									fill-rule='evenodd'
 									d='M11.47 2.47a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06l-6.22-6.22V21a.75.75 0 0 1-1.5 0V4.81l-6.22 6.22a.75.75 0 1 1-1.06-1.06l7.5-7.5Z'
 									clip-rule='evenodd'
 								/>
 							</svg>
-							<p className='text-neutral-50 text-xl mr-2'>
+							<p className='mr-2 text-xl text-neutral-50'>
 								{convertTemp(weatherData.main.temp_max)}­°
 							</p>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								viewBox='0 0 24 24'
 								fill='currentColor'
-								className='w-6 h-6 text-red-500 ml-2'>
+								className='ml-2 h-6 w-6 text-red-500'>
 								<path
 									fill-rule='evenodd'
 									d='M12 2.25a.75.75 0 0 1 .75.75v16.19l6.22-6.22a.75.75 0 1 1 1.06 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 1 1 1.06-1.06l6.22 6.22V3a.75.75 0 0 1 .75-.75Z'
 									clip-rule='evenodd'
 								/>
 							</svg>
-							<p className='text-neutral-50 text-xl'>
+							<p className='text-xl text-neutral-50'>
 								{convertTemp(weatherData.main.temp_min)}­°
 							</p>
 						</div>

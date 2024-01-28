@@ -58,23 +58,23 @@ function Flashcards() {
 	};
 
 	return (
-		<div className='flex flex-col items-center h-screen'>
-			<div className='max-w-xs w-full pt-16 flex justify-center absolute'>
+		<div className='flex h-screen flex-col items-center'>
+			<div className='absolute flex w-full max-w-xs justify-center pt-16'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
-						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+						className='w-8 cursor-pointer invert filter hover:opacity-75'
 					/>
 				</Link>
-				<h1 className='text-neutral-50 text-xl absolute'>Flashcards</h1>
+				<h1 className='absolute text-xl text-neutral-50'>Flashcards</h1>
 			</div>
 
-			<div className='flex flex-col justify-center items-center flex-1 max-w-xs w-full'>
+			<div className='flex w-full max-w-xs flex-1 flex-col items-center justify-center'>
 				<div
 					onClick={toggleShowAnswer}
-					className='flex items-center justify-center bg-neutral-950 h-40 ring ring-yellow-400 rounded w-11/12 cursor-pointer'>
+					className='flex h-40 w-11/12 cursor-pointer items-center justify-center rounded bg-neutral-950 ring ring-yellow-400'>
 					<p
-						className={`text-neutral-50 text-center p-4 bg-neutral-950 selection:bg-transparent ${
+						className={`bg-neutral-950 p-4 text-center text-neutral-50 selection:bg-transparent ${
 							showAnswer ? 'text-8xl' : ''
 						}`}>
 						{showAnswer
@@ -85,12 +85,12 @@ function Flashcards() {
 				<div className='flex p-2'>
 					<p
 						onClick={previousFlashCard}
-						className='text-4xl cursor-pointer hover:opacity-75 selection:bg-transparent'>
+						className='cursor-pointer text-4xl selection:bg-transparent hover:opacity-75'>
 						⬅️
 					</p>
 					<p
 						onClick={nextFlashCard}
-						className='text-4xl cursor-pointer hover:opacity-75 selection:bg-transparent'>
+						className='cursor-pointer text-4xl selection:bg-transparent hover:opacity-75'>
 						➡️
 					</p>
 				</div>

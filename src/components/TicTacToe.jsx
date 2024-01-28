@@ -64,21 +64,21 @@ function TicTacToe() {
 	}
 
 	return (
-		<div className='flex flex-col items-center h-screen'>
-			<div className='max-w-xs w-full pt-16 flex justify-center absolute'>
+		<div className='flex h-screen flex-col items-center'>
+			<div className='absolute flex w-full max-w-xs justify-center pt-16'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
-						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+						className='w-8 cursor-pointer invert filter hover:opacity-75'
 					/>
 				</Link>
-				<h1 className='text-neutral-50 text-xl absolute'>
+				<h1 className='absolute text-xl text-neutral-50'>
 					Tic-Tac-Toe
 				</h1>
 			</div>
 
-			<div className='flex flex-col justify-center flex-1 max-w-xs w-full'>
-				<div className='grid grid-rows-3 grid-cols-3 h-60 border cursor-pointer text-center text-4xl mb-2'>
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center'>
+				<div className='mb-2 grid h-60 cursor-pointer grid-cols-3 grid-rows-3 border text-center text-4xl'>
 					<Square
 						value={squares[0]}
 						onSquareClick={() => handleClick(0)}
@@ -126,8 +126,8 @@ function TicTacToe() {
 					/>
 				</div>
 
-				<div className='flex justify-between items-center'>
-					<div className='text-neutral-50 text-xl'>{status}</div>
+				<div className='flex items-center justify-between'>
+					<div className='text-xl text-neutral-50'>{status}</div>
 					<div>
 						<svg
 							onClick={resetGame}
@@ -136,7 +136,7 @@ function TicTacToe() {
 							viewBox='0 0 24 24'
 							stroke-width='1.5'
 							stroke='currentColor'
-							className='w-8 text-neutral-50 cursor-pointer hover:opacity-75'>
+							className='w-8 cursor-pointer text-neutral-50 hover:opacity-75'>
 							<path
 								stroke-linecap='round'
 								stroke-linejoin='round'

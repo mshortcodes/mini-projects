@@ -6,12 +6,12 @@ const Card = ({ value, onClick, isFlipped, isMatched }) => {
 	return (
 		<div
 			onClick={onClick}
-			className={`flex justify-center items-center rounded h-20 cursor-pointer hover:bg-neutral-950 hover:ring hover:ring-yellow-400 ${
+			className={`flex h-20 cursor-pointer items-center justify-center rounded hover:bg-neutral-950 hover:ring hover:ring-yellow-400 ${
 				isFlipped
 					? 'bg-neutral-950'
 					: isMatched
-					? 'bg-neutral-950 ring ring-yellow-400'
-					: 'bg-neutral-50'
+						? 'bg-neutral-950 ring ring-yellow-400'
+						: 'bg-neutral-50'
 			}`}>
 			{(isFlipped || isMatched) && value}
 		</div>
@@ -20,7 +20,7 @@ const Card = ({ value, onClick, isFlipped, isMatched }) => {
 
 const Trophy = () => {
 	return (
-		<div className='flex items-center flex-col'>
+		<div className='flex flex-col items-center'>
 			<span className='text-trophy-xl animate-bounce'>🏆</span>
 			<p className='text-xl text-neutral-50'>🎉 Congratulations! 🎉</p>
 		</div>
@@ -36,7 +36,7 @@ const MemoryCardGame = () => {
 	// shuffles symbols and assigns them to cards only on mount
 	useEffect(() => {
 		const shuffledSymbols = [...symbols, ...symbols].sort(
-			() => Math.random() - 0.5
+			() => Math.random() - 0.5,
 		);
 		setCards(shuffledSymbols);
 	}, []);
@@ -77,24 +77,24 @@ const MemoryCardGame = () => {
 	};
 
 	return (
-		<div className='flex flex-col items-center h-screen'>
-			<div className='max-w-xs w-full pt-16 flex justify-center absolute'>
+		<div className='flex h-screen flex-col items-center'>
+			<div className='absolute flex w-full max-w-xs justify-center pt-16'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
-						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+						className='w-8 cursor-pointer invert filter hover:opacity-75'
 					/>
 				</Link>
-				<h1 className='text-neutral-50 text-xl absolute'>
+				<h1 className='absolute text-xl text-neutral-50'>
 					Memory Card Game
 				</h1>
 			</div>
 
-			<div className='flex flex-col justify-center flex-1 max-w-xs w-full'>
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center'>
 				{matchedPairs.length === cards.length ? (
 					<Trophy />
 				) : (
-					<div className='grid grid-rows-4 grid-cols-4 text-6xl gap-4'>
+					<div className='grid grid-cols-4 grid-rows-4 gap-4 text-6xl'>
 						{cards.map((card, index) => (
 							<Card
 								value={card}

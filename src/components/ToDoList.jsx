@@ -41,43 +41,43 @@ function ToDoList() {
 	};
 
 	return (
-		<div className='flex flex-col items-center h-screen'>
-			<div className='max-w-xs w-full pt-16 flex justify-center absolute'>
+		<div className='flex h-screen flex-col items-center'>
+			<div className='absolute flex w-full max-w-xs justify-center pt-16'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
-						className='w-8 filter invert hover:opacity-75 cursor-pointer'
+						className='w-8 cursor-pointer invert filter hover:opacity-75'
 					/>
 				</Link>
-				<h1 className='text-neutral-50 text-xl absolute'>To-Do List</h1>
+				<h1 className='absolute text-xl text-neutral-50'>To-Do List</h1>
 			</div>
 
-			<div className='flex flex-col justify-center flex-1 max-w-xs w-full'>
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center'>
 				<div className='flex flex-col'>
 					<input
 						value={taskInput}
 						onChange={handleInputChange}
 						onKeyDown={handleEnterKey}
-						className='w-full border border-neutral-50 bg-transparent p-1 rounded-lg text-neutral-50'></input>
+						className='w-full rounded-lg border border-neutral-50 bg-transparent p-1 text-neutral-50'></input>
 
-					<div className='justify-between flex'>
+					<div className='flex justify-between'>
 						<button
 							onClick={handleAddTask}
-							className='bg-green-500 p-1 mr-2 mt-2 rounded-lg flex-1 text-neutral-950 hover:opacity-75'>
+							className='mr-2 mt-2 flex-1 rounded-lg bg-green-500 p-1 text-neutral-950 hover:opacity-75'>
 							Add Task
 						</button>
 						<button
 							onClick={handleDeleteTask}
-							className='bg-red-500 p-1 ml-2 mt-2 rounded-lg flex-1 text-neutral-950 hover:opacity-75'>
+							className='ml-2 mt-2 flex-1 rounded-lg bg-red-500 p-1 text-neutral-950 hover:opacity-75'>
 							Delete Task
 						</button>
 					</div>
 
-					<ul className='mt-2 list-none h-0'>
+					<ul className='mt-2 h-0 list-none'>
 						{tasks.map((task, index) => (
 							<li
 								key={index}
-								className='text-neutral-50 bg-neutral-700 my-2 p-1 rounded-md flex justify-between'>
+								className='my-2 flex justify-between rounded-md bg-neutral-700 p-1 text-neutral-50'>
 								<span className='w-11/12 overflow-hidden'>
 									{task}
 								</span>
@@ -85,7 +85,7 @@ function ToDoList() {
 									onClick={() => {
 										handleDeleteEachTask(index);
 									}}
-									className='text-xl cursor-pointer hover:opacity-75 leading-none'>
+									className='cursor-pointer text-xl leading-none hover:opacity-75'>
 									❌
 								</span>
 							</li>
