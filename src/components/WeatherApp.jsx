@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import chevronLeft from '../assets/chevronLeft.svg';
-import arrowUp from '../assets/arrowUp.svg';
-import arrowDown from '../assets/arrowUp.svg';
 
 const apiKey = 'bdae93b08c4f760b6b5bb77ea39da727';
 
@@ -109,6 +107,7 @@ const WeatherApp = () => {
 
 			// convert response to JSON object and update weatherData state
 			setWeatherData(await weatherDataResponse.json());
+			console.log(weatherData);
 		} catch (error) {
 			// Handle errors
 			console.error(error.message);
@@ -154,9 +153,39 @@ const WeatherApp = () => {
 						<div className='text-8xl text-center pb-1'>
 							{getWeatherEmoji(weatherData.weather[0].id)}
 						</div>
-						<p className='text-neutral-50 text-center'>
+						<p className='text-neutral-50 text-center pb-1'>
 							{weatherData.weather[0].main}
 						</p>
+						<div className='flex justify-center'>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								viewBox='0 0 24 24'
+								fill='currentColor'
+								className='w-6 h-6 fill-green-500'>
+								<path
+									fill-rule='evenodd'
+									d='M11.47 2.47a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06l-6.22-6.22V21a.75.75 0 0 1-1.5 0V4.81l-6.22 6.22a.75.75 0 1 1-1.06-1.06l7.5-7.5Z'
+									clip-rule='evenodd'
+								/>
+							</svg>
+							<p className='text-neutral-50 text-xl mr-2'>
+								{convertTemp(weatherData.main.temp_max)}­°
+							</p>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								viewBox='0 0 24 24'
+								fill='currentColor'
+								className='w-6 h-6 text-red-500 ml-2'>
+								<path
+									fill-rule='evenodd'
+									d='M12 2.25a.75.75 0 0 1 .75.75v16.19l6.22-6.22a.75.75 0 1 1 1.06 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 1 1 1.06-1.06l6.22 6.22V3a.75.75 0 0 1 .75-.75Z'
+									clip-rule='evenodd'
+								/>
+							</svg>
+							<p className='text-neutral-50 text-xl'>
+								{convertTemp(weatherData.main.temp_min)}­°
+							</p>
+						</div>
 					</>
 				)}
 			</div>
