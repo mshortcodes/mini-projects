@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import chevronLeft from '../assets/chevronLeft.svg';
-import resetArrows from '../assets/resetArrows.svg';
 
 // define Square component
 function Square({ value, onSquareClick, isWinner }) {
@@ -10,7 +9,7 @@ function Square({ value, onSquareClick, isWinner }) {
 			onClick={onSquareClick}
 			className={`border border-neutral-50 p-4 selection:bg-transparent ${
 				isWinner
-					? 'bg-yellow-400'
+					? 'bg-yellow-400 hover:ring hover:ring-yellow-400'
 					: 'hover:bg-neutral-950 hover:ring hover:ring-yellow-400'
 			}`}>
 			{value}
@@ -137,7 +136,7 @@ function TicTacToe() {
 							viewBox='0 0 24 24'
 							stroke-width='1.5'
 							stroke='currentColor'
-							class='w-8 text-neutral-50 cursor-pointer hover:opacity-75'>
+							className='w-8 text-neutral-50 cursor-pointer hover:opacity-75'>
 							<path
 								stroke-linecap='round'
 								stroke-linejoin='round'
