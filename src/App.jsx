@@ -10,18 +10,16 @@ import Flashcards from './components/Flashcards.jsx';
 function App() {
 	return (
 		<BrowserRouter>
-			<>
-				<Routes>
-					<Route path='/' element={<Home />}></Route>
-					<Route path='/to-do-list' element={<ToDoList />}></Route>
-					<Route path='/tic-tac-toe' element={<TicTacToe />}></Route>
-					<Route path='/weather-app' element={<WeatherApp />}></Route>
-					<Route
-						path='/memory-card-game'
-						element={<MemoryCardGame />}></Route>
-					<Route path='/flashcards' element={<Flashcards />}></Route>
-				</Routes>
-			</>
+			<Routes>
+				<Route path='/' element={<Home />}></Route>
+				<Route path='/to-do-list' element={<ToDoList />}></Route>
+				<Route path='/tic-tac-toe' element={<TicTacToe />}></Route>
+				<Route path='/weather-app' element={<WeatherApp />}></Route>
+				<Route
+					path='/memory-card-game'
+					element={<MemoryCardGame />}></Route>
+				<Route path='/flashcards' element={<Flashcards />}></Route>
+			</Routes>
 		</BrowserRouter>
 	);
 }

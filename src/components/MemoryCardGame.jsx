@@ -21,7 +21,7 @@ const Card = ({ value, onClick, isFlipped, isMatched }) => {
 const Trophy = () => {
 	return (
 		<div className='flex flex-col items-center'>
-			<span className='text-trophy-xl animate-bounce'>🏆</span>
+			<span className='text-trophy-xl animate-bounce text-8xl'>🏆</span>
 			<p className='text-xl text-neutral-50'>🎉 Congratulations! 🎉</p>
 		</div>
 	);

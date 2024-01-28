@@ -51,7 +51,7 @@ function TicTacToe() {
 	let status;
 
 	if (winner) {
-		status = `👑: ${squares[winner[0]]}`;
+		status = `🏆: ${squares[winner[0]]}`;
 	} else if (draw) {
 		status = `It's a draw!`;
 	} else {
