@@ -109,7 +109,6 @@ const WeatherApp = () => {
 			setWeatherData(await weatherDataResponse.json());
 			console.log(weatherData);
 		} catch (error) {
-			// Handle errors
 			console.error(error.message);
 		}
 	};
@@ -135,10 +134,10 @@ const WeatherApp = () => {
 						onChange={handleLocationChange}
 						onKeyDown={handleKeyDown}
 						placeholder='city, state'
-						className='w-full rounded-lg border border-neutral-50 bg-transparent p-1 text-neutral-50'></input>
+						className='w-full rounded-lg border border-neutral-50 bg-transparent p-2 text-neutral-50'></input>
 					<div
 						onClick={handleSearch}
-						className='absolute right-2 top-0 cursor-pointer text-2xl selection:bg-transparent hover:opacity-75'>
+						className='absolute right-2 top-1 cursor-pointer text-2xl selection:bg-transparent hover:opacity-75'>
 						🔍
 					</div>
 				</div>

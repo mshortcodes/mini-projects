@@ -10,8 +10,8 @@ function ToDoList() {
 		setTaskInput(e.target.value);
 	};
 
-	// updates tasks state by creating new array with existing tasks and new task input
-	// clears task input
+	// update tasks state by creating new array with existing tasks and new task input
+	// clear task input
 	const handleAddTask = () => {
 		if (taskInput.trim() !== '') {
 			setTasks([...tasks, taskInput]);
@@ -25,8 +25,8 @@ function ToDoList() {
 		}
 	};
 
-	// accesses previous state with functional form of state setter
-	// creates copy of tasks and removes most recent one
+	// access previous state with functional form of state setter
+	// create copy of tasks and remove most recent one
 	const handleDeleteTask = () => {
 		setTasks((prevTasks) => {
 			const updatedTasks = [...prevTasks];
@@ -35,7 +35,7 @@ function ToDoList() {
 		});
 	};
 
-	// updates tasks array to include everything except the one clicked
+	// update tasks array to include everything except the one clicked
 	const handleDeleteEachTask = (index) => {
 		setTasks((prevTasks) => prevTasks.filter((_, i) => i !== index));
 	};
@@ -58,26 +58,26 @@ function ToDoList() {
 						value={taskInput}
 						onChange={handleInputChange}
 						onKeyDown={handleEnterKey}
-						className='w-full rounded-lg border border-neutral-50 bg-transparent p-1 text-neutral-50'></input>
+						className='w-full rounded-lg border border-neutral-50 bg-transparent p-2 text-neutral-50'></input>
 
 					<div className='flex justify-between'>
 						<button
 							onClick={handleAddTask}
-							className='mr-2 mt-2 flex-1 rounded-lg bg-green-500 p-1 text-neutral-950 hover:opacity-75'>
+							className='mr-1 mt-2 flex-1 rounded-lg bg-green-500 p-2 text-neutral-950 hover:opacity-75'>
 							Add Task
 						</button>
 						<button
 							onClick={handleDeleteTask}
-							className='ml-2 mt-2 flex-1 rounded-lg bg-red-500 p-1 text-neutral-950 hover:opacity-75'>
+							className='ml-1 mt-2 flex-1 rounded-lg bg-red-500 p-2 text-neutral-950 hover:opacity-75'>
 							Delete Task
 						</button>
 					</div>
 
-					<ul className='mt-2 h-0 list-none'>
+					<ul className='mt-2 h-10 list-none'>
 						{tasks.map((task, index) => (
 							<li
 								key={index}
-								className='my-2 flex justify-between rounded-md bg-neutral-700 p-1 text-neutral-50'>
+								className='mb-2 flex justify-between rounded-md bg-neutral-700 p-2 text-neutral-50'>
 								<span className='w-11/12 overflow-hidden'>
 									{task}
 								</span>

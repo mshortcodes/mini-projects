@@ -33,7 +33,7 @@ const MemoryCardGame = () => {
 	const [flippedCards, setFlippedCards] = useState([]);
 	const [matchedPairs, setMatchedPairs] = useState([]);
 
-	// shuffles symbols and assigns them to cards only on mount
+	// shuffle symbols and assign them to cards only on mount
 	useEffect(() => {
 		const shuffledSymbols = [...symbols, ...symbols].sort(
 			() => Math.random() - 0.5,
@@ -42,32 +42,32 @@ const MemoryCardGame = () => {
 	}, []);
 
 	const handleClick = (index) => {
-		// sets conditions: if only one or zero cards have been flipped,
+		// set conditions: if only one or zero cards have been flipped,
 		// and the clicked card is not already flipped, and the clicked card is not matched
 		if (
 			flippedCards.length < 2 &&
 			!flippedCards.includes(index) &&
 			!matchedPairs.includes(index)
 		) {
-			// creates copy of flippedCards array and assigns newFlippedCards to it plus the clicked card
+			// create copy of flippedCards array and assign newFlippedCards to it plus the clicked card
 			const newFlippedCards = [...flippedCards, index];
 			setFlippedCards(newFlippedCards);
 
-			// destructures indices of the clicked cards if they match
+			// destructure indices of the clicked cards if they match
 			if (newFlippedCards.length === 2) {
 				const [firstCardIndex, secondCardIndex] = newFlippedCards;
 
-				// assigns the indices to the matchedPairs array if there is a match
+				// assign the indices to the matchedPairs array if there is a match
 				if (cards[firstCardIndex] === cards[secondCardIndex]) {
 					setMatchedPairs((prev) => [
 						...prev,
 						firstCardIndex,
 						secondCardIndex,
 					]);
-					// resets state of flippedCards
+					// reset state of flippedCards
 					setFlippedCards([]);
 				} else {
-					// times out after 1 second if no match
+					// time out after 1 second if no match
 					setTimeout(() => {
 						setFlippedCards([]);
 					}, 1000);

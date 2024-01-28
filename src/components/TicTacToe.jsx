@@ -151,7 +151,7 @@ function TicTacToe() {
 }
 
 // use indices to check for all possible winning combinations
-// takes in the squares array and returns an array of the winning indices
+// take in the squares array and return an array of the winning indices
 function calculateWinner(squares) {
 	const lines = [
 		[0, 1, 2],

@@ -36,7 +36,7 @@ function Flashcards() {
 	const [showAnswer, setShowAnswer] = useState(false);
 
 	// event handlers for arrows
-	// resets answer state so that only questions are shown
+	// reset answer state so that only questions are shown
 	const nextFlashCard = () => {
 		setShowAnswer(false);
 		setCurrentFlashCard((previous) => {
@@ -52,7 +52,7 @@ function Flashcards() {
 	};
 
 	// event handler for clicking card
-	// toggles between showing question and answer
+	// toggle between showing question and answer
 	const toggleShowAnswer = () => {
 		setShowAnswer(!showAnswer);
 	};
