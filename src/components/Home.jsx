@@ -15,24 +15,24 @@ function Home() {
 						</div>
 					</Link>
 					<Link to='/tic-tac-toe'>
-						<div className='hover:shadow-yellow-400md:text-6xl m-2 cursor-pointer rounded-lg border-2 border-neutral-50 p-4 text-4xl selection:bg-transparent hover:bg-neutral-950 hover:shadow-md md:text-6xl '>
+						<div className='m-2 cursor-pointer rounded-lg border-2 border-neutral-50 p-4 text-4xl selection:bg-transparent hover:bg-neutral-950 hover:shadow-md hover:shadow-yellow-400 md:text-6xl'>
 							✖️
 						</div>
 					</Link>
 					<Link to='weather-app'>
-						<div className='hover:shadow-yellow-400md:text-6xl m-2 cursor-pointer rounded-lg border-2 border-neutral-50 p-4 text-4xl selection:bg-transparent hover:bg-neutral-950 hover:shadow-md md:text-6xl '>
+						<div className='m-2 cursor-pointer rounded-lg border-2 border-neutral-50 p-4 text-4xl selection:bg-transparent hover:bg-neutral-950 hover:shadow-md hover:shadow-yellow-400 md:text-6xl'>
 							🌦️
 						</div>
 					</Link>
 				</div>
 				<div className='flex justify-center'>
 					<Link to='/memory-card-game'>
-						<div className='hover:shadow-yellow-400md:text-6xl m-2 cursor-pointer rounded-lg border-2 border-neutral-50 p-4 text-4xl selection:bg-transparent hover:bg-neutral-950 hover:shadow-md md:text-6xl '>
+						<div className='m-2 cursor-pointer rounded-lg border-2 border-neutral-50 p-4 text-4xl selection:bg-transparent hover:bg-neutral-950 hover:shadow-md hover:shadow-yellow-400 md:text-6xl'>
 							🃏
 						</div>
 					</Link>
 					<Link to='flashcards'>
-						<div className='hover:shadow-yellow-400md:text-6xl m-2 cursor-pointer rounded-lg border-2 border-neutral-50 p-4 text-4xl selection:bg-transparent hover:bg-neutral-950 hover:shadow-md md:text-6xl '>
+						<div className='m-2 cursor-pointer rounded-lg border-2 border-neutral-50 p-4 text-4xl selection:bg-transparent hover:bg-neutral-950 hover:shadow-md hover:shadow-yellow-400 md:text-6xl'>
 							🦒
 						</div>
 					</Link>

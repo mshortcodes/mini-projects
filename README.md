@@ -1,8 +1,178 @@
-# React + Vite
+# Mini Projects
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Table of Contents
 
-Currently, two official plugins are available:
+-   [About](#about)
+    -   [Tools](#tools)
+    -   [Design](#design)
+    -   [Challenges](#challenges)
+    -   [What I Learned](#what-i-learned)
+-   [Features](#features)
+    -   [To-Do List](#to-do-list)
+    -   [Tic-Tac-Toe](#tic-tac-toe)
+    -   [Weather App](#weather-app)
+    -   [Memory Card Game](#memory-card-game)
+    -   [Flashcards](#flashcards)
+-   [Getting Started]()
+    -   [Prerequisites]()
+    -   [Installation]()
+-   [Contact]()
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# About
+
+Mini Projects consists of 5 projects:
+
+-   To-Do list
+-   Tic-Tac-Toe
+-   Weather App
+-   Memory Card Game
+-   Flashcards
+
+<img src='./readme-images/home.png' alt='home page' />
+
+### Tools
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width='100'><defs><linearGradient id="a" x1="6" x2="235" y1="33" y2="344" gradientTransform="translate(0 .937) scale(.3122)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#41d1ff"/><stop offset="1" stop-color="#bd34fe"/></linearGradient><linearGradient id="b" x1="194.651" x2="236.076" y1="8.818" y2="292.989" gradientTransform="translate(0 .937) scale(.3122)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffea83"/><stop offset=".083" stop-color="#ffdd35"/><stop offset="1" stop-color="#ffa800"/></linearGradient></defs><path fill="url(#a)" d="M124.766 19.52 67.324 122.238c-1.187 2.121-4.234 2.133-5.437.024L3.305 19.532c-1.313-2.302.652-5.087 3.261-4.622L64.07 25.187a3.09 3.09 0 0 0 1.11 0l56.3-10.261c2.598-.473 4.575 2.289 3.286 4.594Zm0 0"/><path fill="url(#b)" d="M91.46 1.43 48.954 9.758a1.56 1.56 0 0 0-1.258 1.437l-2.617 44.168a1.563 1.563 0 0 0 1.91 1.614l11.836-2.735a1.562 1.562 0 0 1 1.88 1.836l-3.517 17.219a1.562 1.562 0 0 0 1.985 1.805l7.308-2.223c1.133-.344 2.223.652 1.985 1.812l-5.59 27.047c-.348 1.692 1.902 2.614 2.84 1.164l.625-.968 34.64-69.13c.582-1.16-.421-2.48-1.69-2.234l-12.185 2.352a1.558 1.558 0 0 1-1.793-1.965l7.95-27.562A1.56 1.56 0 0 0 91.46 1.43Zm0 0"/></svg>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width='100' alt='react logo' />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" width='100' alt='tailwind logo' />
+
+### Design
+
+I originally began working on these projects with vanilla JS and had completed four of them. However, it looked horrible.
+I can copy other designs but creating them myself is not my specialty. This is when I realized just diving in coding without a particular design or layout in mind is not the best idea.
+
+So, the design I implemented came from inspiration
+from a YouTuber I follow, ForrestKnight. He had created a mini-game website which I thought looked great with a minimal design. My projects are different, but the memory card game was also an idea from him!
+
+### Challenges
+
+Nearly everything about these projects was difficult for me. Even though I spent months completing the Meta Front-End Developer Certificate and supplemented that with even more Codecademy certificates, I still found myself constantly stuck.
+
+One of the harder challenges I faced was with the weather app. I had almost no experience fetching data and using an API. Also, I didn't know that in order to search for a location, that location would first need to be converted to longitude and lagitute coordinates which required me to use a geocoding API for that as well.
+
+### What I Learned
+
+While these projects took longer and were harder than I had originally expected, I still enjoyed the process. I found myself working on them before and after work. They didn't seem like work, but were fun. When I got stuck, I first tried my best to figure it myself. If I couldn't, then I used ChatGPT as my main go-to resource. It's very nice having an all-in-one resource instead of me having to search on Google, find the best resource, etc. I had to resort to it many times with questions such as, "How do I use fetch() in js?", "Remind me what useEffect does and its syntax", etc.
+
+This was also my first time using Tailwind and I love it. It makes writing CSS so much easier. I don't have to think of class names, worry about specificity, write out long media queries, etc. I don't want to go back to writing normal CSS again.
+
+Concepts learned/practiced:
+
+-   Tailwind
+-   Toggling with booleans
+-   useState, useEffect
+-   Data fetching/using an API
+-   Conditional rendering
+-   Event listening/handling
+
+# Features
+
+### To-Do List
+
+<img src='./readme-images/to-do-list.png' alt='to-do list' />
+
+<br />
+
+I got the idea for this project from Google. Its functionality is basic. You can type, add a task, delete the last task in the list, or delete a specific task by clicking the ❌.
+
+Features:
+
+-   enter key event listener/handler
+-   click event listener/handler
+-   state management
+
+### Tic-Tac-Toe
+
+<img src='./readme-images/tic-tac-toe.png' alt='tic-tac-toe' />
+
+<br />
+
+This project was built on from the tic-tac-toe tutorial on react.dev. I went through the tutorial awhile back and thought it would be fun to rebuild it with a better UI and extend it. While some of the logic is from the tutorial, some of it is extended. In this version, I implemented a reset feature which clears the board and resets the game's state. I also made it have conditional rendering for the winning squares so it is more obvious when winning. There is also a draw status when all squares are filled and there is no winner.
+
+Features:
+
+-   state management
+-   conditional rendering/styling for winner
+-   status update on state of game
+-   prevents clicking in square if there's a winner
+-   toggles player symbol with boolean
+-   checks for draw
+
+### Weather App
+
+<img src='./readme-images/weather-app.png' alt='weather app' />
+
+<br />
+
+This one was another idea from Google. It was a bit more involved than I had expected. I was completely unaware of how weather data is retrieved and how the location needs to use longitude and latitude. And of course the temperatures were in Kelvin.
+
+I thought it was really amazing when I got the JSON response and examined all of the data in the console. It's awesome how a few lines of code and an API key can get data on anywhere in the world. I chose to only use a couple data points and limit the country to the US as this was a mini project.
+
+Features:
+
+-   Data fetching (US only)
+-   Temperature conversion (Kelvin to Fahrenheit)
+-   Location conversion to lon/lat
+-   Conditional rendering of appropriate weather image and data itself
+
+### Memory Card Game
+
+<img src='./readme-images/memory-card-game.png' alt='memory card game' />
+
+<br />
+
+Again, inspiration for this came from ForrestKnight. I thought it would be a fun project to do as I enjoy games myself. This one was one of the more difficult projects as there were a lot of factors to consider such as if the cards match, if they don't, keeping the cards face up if they do, including a time out feature, etc.
+
+Features:
+
+-   randomizes/shuffles the cards on mount
+-   times out after 1 second if cards don't match
+-   conditional rendering of trophy
+-   state management
+-   conditional styling of cards
+
+### Flashcards
+
+<img src='./readme-images/flashcards.png' alt='memory card game' />
+
+<img src='./readme-images/flashcards-answer.png' alt='memory card game' />
+
+<br />
+
+I was trying to think of a last project to include, and just randomly thought of flashcards so I went for it. I used an array of objects to store the cards. The questions and answers are toggled with a boolean. One of the challenges was cycling through ten elements/cards and not ever 'ending' the set. I had to rely on ChatGPT for helping me with the formulas:
+
+```
+return (previous + 1) % flashcards.length
+return (previous - 1 + flashcards.length) % flashcards.length
+```
+
+Features:
+
+-   endless cycling through flashcards
+-   state management keeps track of current position
+-   conditional rendering of questions and answers based on boolean toggle
+
+# Getting Started
+
+Explain how to set up the project on a local machine.
+
+### Prerequisites
+
+List any software, tools, or dependencies that users need to have installed before they can use your project.
+
+-   Prerequisite 1
+-   Prerequisite 2
+-   ...
+
+### Installation
+
+Provide step-by-step instructions on how to install and set up your project.
+
+```bash
+# Example installation steps
+git clone https://github.com/your-username/your-project.git
+cd your-project
+npm install
+```
+
+# Contact
