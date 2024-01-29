@@ -32,8 +32,8 @@ Mini Projects consists of 5 projects:
 
 ### Tools
 
-<img src='./public/vite.svg' width='100' alt='vite logo' />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width='100' alt='react logo' />
+<img src='./public/vite.svg' width='100' alt='vite logo' />&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width='100' alt='react logo' />&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" width='100' alt='tailwind logo' />
 
 ### Design
