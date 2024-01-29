@@ -12,12 +12,6 @@ dist
 dist-ssr
 *.local
 config.js
-readme-images
-.eslintrc.cjs
-.prettierrc
-postcss.config.js
-tailwind.config.js
-vite.config.js
 
 # Editor directories and files
 .vscode/*
