@@ -62,7 +62,7 @@ Concepts learned/practiced:
 -   Toggling with booleans
 -   useState, useEffect
 -   Data fetching/using an API
--   Conditional rendering
+-   Conditional rendering/styling
 -   Event listening/handling
 
 # Features
@@ -141,9 +141,9 @@ Features:
 
 I was trying to think of a last project to include, and just randomly thought of flashcards so I went for it. I used an array of objects to store the cards. The questions and answers are toggled with a boolean. One of the challenges was cycling through ten elements/cards and not ever 'ending' the set. I had to rely on ChatGPT for helping me with the formulas:
 
-```
-return (previous + 1) % flashcards.length
-return (previous - 1 + flashcards.length) % flashcards.length
+```js
+return (previous + 1) % flashcards.length;
+return (previous - 1 + flashcards.length) % flashcards.length;
 ```
 
 Features:

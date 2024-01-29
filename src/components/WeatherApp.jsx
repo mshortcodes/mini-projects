@@ -1,8 +1,9 @@
+import config from '../../config.js';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import chevronLeft from '../assets/chevronLeft.svg';
 
-const apiKey = 'bdae93b08c4f760b6b5bb77ea39da727';
+const apiKey = config.apiKey;
 
 const convertTemp = (kelvin) => {
 	return Math.round((kelvin - 273.15) * (9 / 5) + 32);
