@@ -1,9 +1,10 @@
-import config from '../../config.js';
+// import config from '../../config.js'; for local key
+// const apiKey = config.apiKey; for local key
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import chevronLeft from '../assets/chevronLeft.svg';
 
-const apiKey = config.apiKey;
+const apiKey = process.env.WEATHER_API;
 
 const convertTemp = (kelvin) => {
 	return Math.round((kelvin - 273.15) * (9 / 5) + 32);
