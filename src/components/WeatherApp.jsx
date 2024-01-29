@@ -1,3 +1,5 @@
+// import config from '../../config.js'; for local key
+// const apiKey = config.apiKey; for local key
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import chevronLeft from '../assets/chevronLeft.svg';
