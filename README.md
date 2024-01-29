@@ -110,10 +110,10 @@ I thought it was really amazing when I got the JSON response and examined all of
 
 Features:
 
--   Data fetching (US only)
--   Temperature conversion (Kelvin to Fahrenheit)
--   Location conversion to lon/lat
--   Conditional rendering of appropriate weather image and data itself
+-   data fetching (US only)
+-   temperature conversion (Kelvin to Fahrenheit)
+-   location conversion to lon/lat
+-   conditional rendering of appropriate weather image and data itself
 
 ### Memory Card Game
 
