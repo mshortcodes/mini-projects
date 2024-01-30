@@ -41,8 +41,7 @@ Mini Projects consists of 5 projects:
 I originally began working on these projects with vanilla JS and had completed four of them. However, it looked horrible.
 I can copy other designs but creating them myself is not my specialty. This is when I realized just diving in coding without a particular design or layout in mind is not the best idea.
 
-So, the design I implemented came from inspiration
-from a YouTuber I follow, ForrestKnight. He had created a mini-game website which I thought looked great with a minimal design. My projects are different, but the memory card game was also an idea from him.
+So, the design I implemented came from inspiration from a YouTuber I follow, ForrestKnight. He had created a mini-game website which I thought looked great with a minimal design. My projects are different, but the memory card game was also an idea from him.
 
 ### Challenges
 
@@ -54,7 +53,7 @@ One of the harder challenges I faced was with the weather app. I had almost no e
 
 While these projects took longer and were harder than I had originally expected, I still enjoyed the process. I found myself working on them before and after work. They didn't seem like work, but were fun. When I got stuck, I first tried my best to figure it myself. If I couldn't, then I used ChatGPT as my main go-to resource. It's very nice having an all-in-one resource instead of me having to search on Google, find the best resource, etc. I had to resort to it many times with questions such as, "How do I use fetch() in js?", "Remind me what useEffect does and its syntax", etc.
 
-This was also my first time using Tailwind and I love it. It makes writing CSS so much easier. I don't have to think of class names, worry about specificity, write out long media queries, etc. I also appreciate how it lets you know the exact CSS it's using when hovering.
+This was also my first time using Tailwind and I love it. It makes writing CSS so much easier. I don't have to think of class names, worry about specificity, write out long media queries, etc. I also appreciate how it lets you know the exact CSS it's using when hovering over its classes.
 
 Concepts learned/practiced:
 
