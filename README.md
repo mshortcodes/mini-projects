@@ -70,8 +70,6 @@ Concepts learned/practiced:
 
 <img src='./readme-images/to-do-list.png' alt='to-do list' />
 
-<br />
-
 I got the idea for this project from Google. Its functionality is basic. You can type, add a task, delete the last task in the list, or delete a specific task by clicking the ❌.
 
 Features:
@@ -83,8 +81,6 @@ Features:
 ### Tic-Tac-Toe
 
 <img src='./readme-images/tic-tac-toe.png' alt='tic-tac-toe' />
-
-<br />
 
 This project was built on from the tic-tac-toe tutorial on react.dev. I went through the tutorial awhile back and thought it would be fun to rebuild it with a better UI and extend it. While some of the logic is from the tutorial, some of it is extended. In this version, I implemented a reset feature which clears the board and resets the game's state. I also made it have conditional rendering for the winning squares so it is more obvious when winning. There is also a draw status when all squares are filled and there is no winner.
 
@@ -101,8 +97,6 @@ Features:
 
 <img src='./readme-images/weather-app.png' alt='weather app' />
 
-<br />
-
 This one was another idea from Google. It was a bit more involved than I had expected. I was completely unaware of how weather data is retrieved and how the location needs to use longitude and latitude. And of course the temperatures were in Kelvin.
 
 I thought it was really amazing when I got the JSON response and examined all of the data in the console. It's awesome how a few lines of code and an API key can get data on anywhere in the world. I chose to only use a couple data points and limit the country to the US as this was a mini project.
@@ -117,8 +111,6 @@ Features:
 ### Memory Card Game
 
 <img src='./readme-images/memory-card-game.png' alt='memory card game' />
-
-<br />
 
 Again, inspiration for this came from ForrestKnight. I thought it would be a fun project to do as I enjoy games myself. This one was one of the more difficult projects as there were a lot of factors to consider such as if the cards match, if they don't, keeping the cards face up if they do, including a time out feature, etc.
 
@@ -135,8 +127,6 @@ Features:
 <img src='./readme-images/flashcards.png' alt='memory card game' />
 
 <img src='./readme-images/flashcards-answer.png' alt='memory card game' />
-
-<br />
 
 I was trying to think of a last project to include, and just randomly thought of flashcards so I went for it. I used an array of objects to store the cards. The questions and answers are toggled with a boolean. One of the challenges was cycling through ten elements/cards and not ever 'ending' the set. I had to rely on ChatGPT for helping me with the formulas:
 
