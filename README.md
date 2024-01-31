@@ -165,13 +165,13 @@ To get the project running on your machine, you'll need to have the following in
 1. Clone the repository to your local machine:
 
 ```
-git clone https://github.com/mshortcodes/mini_projects.git
+git clone https://github.com/mshortcodes/mini-projects.git
 ```
 
 2. Change into the project directory:
 
 ```
-cd mini_projects
+cd mini-projects
 ```
 
 3. Install dependencies using npm:
