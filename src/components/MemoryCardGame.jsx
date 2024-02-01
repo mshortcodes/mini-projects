@@ -80,7 +80,7 @@ const MemoryCardGame = () => {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='absolute flex w-full max-w-xs justify-center pt-16 md:max-w-md'>
+			<div className='flex w-full max-w-xs justify-center py-16 md:max-w-md'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
@@ -92,7 +92,7 @@ const MemoryCardGame = () => {
 				</h1>
 			</div>
 
-			<div className='flex w-full max-w-xs flex-1 flex-col justify-center md:max-w-md'>
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
 				{matchedPairs.length === cards.length ? (
 					<Trophy />
 				) : (

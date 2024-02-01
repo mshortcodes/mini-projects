@@ -65,7 +65,7 @@ function TicTacToe() {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='absolute flex w-full max-w-xs justify-center pt-16 md:max-w-md'>
+			<div className='flex w-full max-w-xs justify-center py-16 md:max-w-md'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
@@ -77,7 +77,7 @@ function TicTacToe() {
 				</h1>
 			</div>
 
-			<div className='flex w-full max-w-xs flex-1 flex-col justify-center md:max-w-md'>
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
 				<div className='mb-2 grid h-60 cursor-pointer grid-cols-3 grid-rows-3 border text-center text-4xl md:h-80 md:text-6xl'>
 					<Square
 						value={squares[0]}

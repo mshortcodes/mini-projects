@@ -59,7 +59,7 @@ function Flashcards() {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='absolute flex w-full max-w-xs justify-center pt-16 md:max-w-md'>
+			<div className='flex w-full max-w-xs justify-center py-16 md:max-w-md'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
@@ -69,7 +69,7 @@ function Flashcards() {
 				<h1 className='absolute text-xl text-neutral-50'>Flashcards</h1>
 			</div>
 
-			<div className='flex w-full max-w-xs flex-1 flex-col items-center justify-center md:max-w-md'>
+			<div className='flex w-full max-w-xs flex-1 flex-col items-center justify-center pb-40 md:max-w-md'>
 				<div
 					onClick={toggleShowAnswer}
 					className='flex h-40 w-11/12 cursor-pointer items-center justify-center rounded bg-neutral-950 ring ring-yellow-400 md:h-60'>
