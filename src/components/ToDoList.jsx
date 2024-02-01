@@ -42,7 +42,7 @@ function ToDoList() {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='absolute flex w-full max-w-xs justify-center pt-16'>
+			<div className='absolute flex w-full max-w-xs justify-center pt-16 md:max-w-md'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
@@ -52,7 +52,7 @@ function ToDoList() {
 				<h1 className='absolute text-xl text-neutral-50'>To-Do List</h1>
 			</div>
 
-			<div className='flex w-full max-w-xs flex-1 flex-col justify-center'>
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center md:max-w-md'>
 				<div className='flex flex-col'>
 					<input
 						value={taskInput}
@@ -63,12 +63,12 @@ function ToDoList() {
 					<div className='flex justify-between'>
 						<button
 							onClick={handleAddTask}
-							className='mr-1 mt-2 flex-1 rounded-lg bg-green-500 p-2 text-neutral-950 hover:opacity-75'>
+							className='mr-1 mt-2 flex-1 rounded-lg bg-green-500 p-2 font-medium text-neutral-950 hover:opacity-75'>
 							Add Task
 						</button>
 						<button
 							onClick={handleDeleteTask}
-							className='ml-1 mt-2 flex-1 rounded-lg bg-red-500 p-2 text-neutral-950 hover:opacity-75'>
+							className='ml-1 mt-2 flex-1 rounded-lg bg-red-500 p-2 font-medium text-neutral-950 hover:opacity-75'>
 							Delete Task
 						</button>
 					</div>

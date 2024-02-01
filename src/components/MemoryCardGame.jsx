@@ -6,7 +6,7 @@ const Card = ({ value, onClick, isFlipped, isMatched }) => {
 	return (
 		<div
 			onClick={onClick}
-			className={`flex h-20 cursor-pointer items-center justify-center rounded hover:bg-neutral-950 hover:ring hover:ring-yellow-400 ${
+			className={`flex h-20 cursor-pointer items-center justify-center rounded hover:bg-neutral-950 hover:ring hover:ring-yellow-400 md:h-24 ${
 				isFlipped
 					? 'bg-neutral-950'
 					: isMatched
@@ -21,7 +21,9 @@ const Card = ({ value, onClick, isFlipped, isMatched }) => {
 const Trophy = () => {
 	return (
 		<div className='flex flex-col items-center'>
-			<span className='text-trophy-xl animate-bounce text-8xl'>🏆</span>
+			<span className='text-trophy-xl md:text-trophy-xxl animate-bounce'>
+				🏆
+			</span>
 			<p className='text-xl text-neutral-50'>🎉 Congratulations! 🎉</p>
 		</div>
 	);
@@ -78,7 +80,7 @@ const MemoryCardGame = () => {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='absolute flex w-full max-w-xs justify-center pt-16'>
+			<div className='absolute flex w-full max-w-xs justify-center pt-16 md:max-w-md'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
@@ -90,11 +92,11 @@ const MemoryCardGame = () => {
 				</h1>
 			</div>
 
-			<div className='flex w-full max-w-xs flex-1 flex-col justify-center'>
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center md:max-w-md'>
 				{matchedPairs.length === cards.length ? (
 					<Trophy />
 				) : (
-					<div className='grid grid-cols-4 grid-rows-4 gap-4 text-6xl'>
+					<div className='grid grid-cols-4 grid-rows-4 gap-5 text-6xl'>
 						{cards.map((card, index) => (
 							<Card
 								value={card}

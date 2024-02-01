@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function Home() {
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='absolute flex w-full max-w-xs justify-center pt-16'>
+			<div className='absolute flex w-full max-w-md justify-center pt-16'>
 				<h1 className='text-xl text-neutral-50'>Mini Projects</h1>
 			</div>
 

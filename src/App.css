@@ -10,4 +10,8 @@ body {
 	.text-trophy-xl {
 		font-size: 10rem;
 	}
+
+	.text-trophy-xxl {
+		font-size: 15rem;
+	}
 }

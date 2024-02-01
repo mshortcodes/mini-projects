@@ -115,7 +115,7 @@ const WeatherApp = () => {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='absolute flex w-full max-w-xs justify-center pt-16'>
+			<div className='absolute flex w-full max-w-xs justify-center pt-16 md:max-w-md'>
 				<Link to='/' className='mr-auto'>
 					<img
 						src={chevronLeft}
@@ -127,7 +127,7 @@ const WeatherApp = () => {
 				</h1>
 			</div>
 
-			<div className='flex w-full max-w-xs flex-1 flex-col justify-center'>
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center md:max-w-md'>
 				<div className='relative'>
 					<input
 						value={locationInput}
@@ -143,16 +143,16 @@ const WeatherApp = () => {
 				</div>
 				{weatherData && (
 					<>
-						<p className='p-1 text-center text-neutral-50'>
+						<p className='p-2 text-center text-neutral-50'>
 							{weatherData.name}
 						</p>
 						<p className='text-center text-5xl text-neutral-50'>
 							{convertTemp(weatherData.main.temp)}­°F
 						</p>
-						<div className='pb-1 text-center text-8xl'>
+						<div className='pb-3 pl-2 pr-2 pt-2 text-center text-8xl'>
 							{getWeatherEmoji(weatherData.weather[0].id)}
 						</div>
-						<p className='pb-1 text-center text-neutral-50'>
+						<p className='p-2 text-center text-neutral-50'>
 							{weatherData.weather[0].main}
 						</p>
 						<div className='flex justify-center'>
