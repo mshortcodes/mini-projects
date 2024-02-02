@@ -149,7 +149,7 @@ const WeatherApp = () => {
 						<p className='text-center text-5xl text-neutral-50'>
 							{convertTemp(weatherData.main.temp)}­°F
 						</p>
-						<div className='pb-3 pl-2 pr-2 pt-2 text-center text-8xl'>
+						<div className='p-2 text-center text-8xl'>
 							{getWeatherEmoji(weatherData.weather[0].id)}
 						</div>
 						<p className='p-2 text-center text-neutral-50'>
