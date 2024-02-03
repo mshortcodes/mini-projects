@@ -30,7 +30,7 @@ const Trophy = () => {
 };
 
 const MemoryCardGame = () => {
-	const symbols = ['⭐', '🎂', '⚡', '❄️', '👑', '🍇', '🃏', '🎈'];
+	const symbols = ['⭐', '🚀', '⚡', '❄️', '🧁', '🐲', '🃏', '🍕'];
 	const [cards, setCards] = useState([]);
 	const [flippedCards, setFlippedCards] = useState([]);
 	const [matchedPairs, setMatchedPairs] = useState([]);
