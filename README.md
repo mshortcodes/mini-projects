@@ -13,10 +13,10 @@
     -   [Weather App](#weather-app)
     -   [Memory Card Game](#memory-card-game)
     -   [Flashcards](#flashcards)
--   [Getting Started]()
-    -   [Prerequisites]()
-    -   [Installation]()
--   [Contact]()
+-   [Getting Started](#getting-started)
+    -   [Prerequisites](#prerequisites)
+    -   [Installation](#installation)
+-   [Contact](#contact)
 
 # About
 
