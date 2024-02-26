@@ -38,10 +38,11 @@ Mini Projects consists of 5 projects:
 
 ### Design
 
-I originally began working on these projects with vanilla JS and had completed four of them. However, it looked horrible.
-I can copy other designs but creating them myself is not my specialty. This is when I realized just diving in coding without a particular design or layout in mind is not the best idea.
+I originally began working on these projects with vanilla JS and had completed four of them. However, it looked horrible. I can copy other designs but creating them myself is not my specialty. This is when I realized just diving in coding without a particular design or layout in mind is not the best idea.
 
-So, the design I implemented came from inspiration from a YouTuber I follow, ForrestKnight. He had created a mini-game website which I thought looked great with a minimal design. My projects are different, but the memory card game was also an idea from him.
+So, the design I implemented came from inspiration from a YouTuber I follow, ForrestKnight. He had created a mini-game website which I thought looked great with a minimal design. My projects are different than his except for the memory card game.
+
+I worked mostly on functionality for these projects. I used React to have seamless transitions between the projects and also for state management. The router allowed for an easy way to create a single-page app. It also helped with organization as each project is a separate component.
 
 ### Challenges
 
