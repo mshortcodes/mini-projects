@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import chevronLeft from '../assets/chevronLeft.svg';
+import umbrella from '../assets/umbrella.svg';
 
 const apiKey = import.meta.env.VITE_WEATHER_API;
 
@@ -107,7 +108,6 @@ const WeatherApp = () => {
 
 			// convert response to JSON object and update weatherData state
 			setWeatherData(await weatherDataResponse.json());
-			console.log(weatherData);
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -127,14 +127,21 @@ const WeatherApp = () => {
 				</h1>
 			</div>
 
-			<div className='flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
+			<div className='relative flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
+				{!weatherData && (
+					<img
+						src={umbrella}
+						alt='umbrella'
+						className='absolute w-full opacity-25'
+					/>
+				)}
 				<div className='relative'>
 					<input
 						value={locationInput}
 						onChange={handleLocationChange}
 						onKeyDown={handleKeyDown}
 						placeholder='city, state'
-						className='w-full rounded-lg border border-neutral-50 bg-transparent p-2 text-neutral-50'></input>
+						className='w-full rounded-lg border border-neutral-50 bg-transparent p-2 text-neutral-50 outline-none focus:border-yellow-400'></input>
 					<div
 						onClick={handleSearch}
 						className='absolute right-2 top-1 cursor-pointer text-2xl selection:bg-transparent hover:opacity-75'>
@@ -162,9 +169,9 @@ const WeatherApp = () => {
 								fill='currentColor'
 								className='h-6 w-6 fill-green-500'>
 								<path
-									fill-rule='evenodd'
+									fillRule='evenodd'
 									d='M11.47 2.47a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06l-6.22-6.22V21a.75.75 0 0 1-1.5 0V4.81l-6.22 6.22a.75.75 0 1 1-1.06-1.06l7.5-7.5Z'
-									clip-rule='evenodd'
+									clipRule='evenodd'
 								/>
 							</svg>
 							<p className='mr-2 text-xl text-neutral-50'>
@@ -176,9 +183,9 @@ const WeatherApp = () => {
 								fill='currentColor'
 								className='ml-2 h-6 w-6 text-red-500'>
 								<path
-									fill-rule='evenodd'
+									fillRule='evenodd'
 									d='M12 2.25a.75.75 0 0 1 .75.75v16.19l6.22-6.22a.75.75 0 1 1 1.06 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 1 1 1.06-1.06l6.22 6.22V3a.75.75 0 0 1 .75-.75Z'
-									clip-rule='evenodd'
+									clipRule='evenodd'
 								/>
 							</svg>
 							<p className='text-xl text-neutral-50'>
