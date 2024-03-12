@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.font-mono {
+	font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
 body {
-	@apply bg-neutral-800;
+	@apply bg-neutral-800 font-mono;
 }
 
 @layer utilities {
