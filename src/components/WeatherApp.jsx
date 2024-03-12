@@ -132,7 +132,7 @@ const WeatherApp = () => {
 					<img
 						src={umbrella}
 						alt='umbrella'
-						className='absolute w-full opacity-25'
+						className='absolute left-0 right-0 top-10 mx-auto w-1/2'
 					/>
 				)}
 				<div className='relative'>
