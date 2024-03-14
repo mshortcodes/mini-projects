@@ -126,7 +126,7 @@ const WeatherApp = () => {
 				</h1>
 			</div>
 
-			<div className='flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center pb-28 md:max-w-md'>
 				<div className='relative'>
 					<input
 						value={locationInput}

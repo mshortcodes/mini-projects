@@ -7,6 +7,11 @@
 		Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
+html {
+	scrollbar-width: auto;
+	scrollbar-color: #404040 transparent;
+}
+
 body {
 	@apply bg-neutral-800 font-mono;
 }
