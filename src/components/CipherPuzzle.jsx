@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import chevronLeft from '../assets/chevronLeft.svg';
 
 function CipherPuzzle() {
-	const message = 'Happy birthday';
+	const message = 'This is a Caesar cipher';
 
 	function encrypt(message) {
 		const alphabet = 'abcdefghijklmnopqrstuvwxyz';
@@ -40,7 +40,7 @@ function CipherPuzzle() {
 	const navigate = useNavigate();
 
 	const handleClick = () => {
-		if (input === message.toLowerCase()) {
+		if (input.toLowerCase() === message.toLowerCase()) {
 			setSolved(true);
 			setTimeout(() => {
 				navigate('/');
@@ -88,7 +88,7 @@ function CipherPuzzle() {
 					) : (
 						<button
 							onClick={handleClick}
-							className='mx-auto w-1/2 rounded bg-yellow-400 p-2 text-xl font-semibold'>
+							className='mx-auto w-1/2 rounded bg-yellow-400 p-2 text-xl font-semibold hover:opacity-75'>
 							Decipher
 						</button>
 					)}
