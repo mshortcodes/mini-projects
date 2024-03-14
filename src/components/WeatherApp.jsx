@@ -115,7 +115,7 @@ const WeatherApp = () => {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='flex w-full max-w-xs items-center justify-center py-16 md:max-w-md'>
+			<div className='absolute z-50 z-50 flex w-full max-w-xs items-center justify-center py-16 md:max-w-md'>
 				<Link
 					to='/'
 					className='mr-auto cursor-pointer p-4 hover:opacity-75'>
@@ -126,12 +126,12 @@ const WeatherApp = () => {
 				</h1>
 			</div>
 
-			<div className='relative flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
+			<div className='relative flex w-full max-w-xs flex-1 flex-col justify-center md:max-w-md'>
 				{!weatherData && (
 					<img
 						src={umbrella}
 						alt='umbrella'
-						className='absolute left-0 right-0 top-10 mx-auto w-1/2'
+						className='absolute left-0 right-0 top-52 mx-auto w-1/2'
 					/>
 				)}
 				<div className='relative'>
@@ -141,11 +141,11 @@ const WeatherApp = () => {
 						onKeyDown={handleKeyDown}
 						placeholder='city, state'
 						className='w-full rounded-lg border border-neutral-50 bg-transparent p-2 text-neutral-50 outline-none focus:border-yellow-400'></input>
-					<div
+					<button
 						onClick={handleSearch}
-						className='absolute right-2 top-1 cursor-pointer text-2xl selection:bg-transparent hover:opacity-75'>
+						className='absolute right-2 top-1 text-2xl selection:bg-transparent hover:opacity-75'>
 						🔍
-					</div>
+					</button>
 				</div>
 				{weatherData && (
 					<>

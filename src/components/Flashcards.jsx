@@ -59,7 +59,7 @@ function Flashcards() {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='flex w-full max-w-xs items-center justify-center py-16 md:max-w-md'>
+			<div className='absolute z-50 flex w-full max-w-xs items-center justify-center py-16 md:max-w-md'>
 				<Link
 					to='/'
 					className='mr-auto cursor-pointer p-4 hover:opacity-75'>
@@ -68,30 +68,30 @@ function Flashcards() {
 				<h1 className='absolute text-xl text-neutral-50'>Flashcards</h1>
 			</div>
 
-			<div className='flex w-full max-w-xs flex-1 flex-col items-center justify-center pb-40 md:max-w-md'>
+			<div className='flex w-full max-w-xs flex-1 flex-col items-center justify-center md:max-w-md'>
 				<div
 					onClick={toggleShowAnswer}
 					className='flex h-40 w-11/12 cursor-pointer items-center justify-center rounded bg-neutral-950 ring ring-yellow-400 md:h-60'>
-					<p
+					<div
 						className={`bg-neutral-950 p-4 text-center text-neutral-50 selection:bg-transparent ${
 							showAnswer ? 'text-8xl' : 'md:text-xl'
 						}`}>
 						{showAnswer
 							? flashcards[currentFlashCard].answer
 							: flashcards[currentFlashCard].question}
-					</p>
+					</div>
 				</div>
 				<div className='flex p-2'>
-					<p
+					<button
 						onClick={previousFlashCard}
-						className='cursor-pointer text-4xl selection:bg-transparent hover:opacity-75 md:text-5xl'>
+						className='text-4xl selection:bg-transparent hover:opacity-75 md:text-5xl'>
 						⬅️
-					</p>
-					<p
+					</button>
+					<button
 						onClick={nextFlashCard}
-						className='cursor-pointer text-4xl selection:bg-transparent hover:opacity-75 md:text-5xl'>
+						className='text-4xl selection:bg-transparent hover:opacity-75 md:text-5xl'>
 						➡️
-					</p>
+					</button>
 				</div>
 			</div>
 		</div>

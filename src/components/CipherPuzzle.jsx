@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import chevronLeft from '../assets/chevronLeft.svg';
 
 function CipherPuzzle() {
@@ -63,7 +62,7 @@ function CipherPuzzle() {
 	return (
 		<div
 			className={`flex h-screen flex-col items-center transition-colors duration-1000 ${solved && 'bg-black'}`}>
-			<div className='flex w-full max-w-md items-center justify-center py-16'>
+			<div className='absolute z-50 flex w-full max-w-md items-center justify-center py-16'>
 				<Link
 					to='/'
 					className='mr-auto cursor-pointer p-4 hover:opacity-75'>
@@ -75,7 +74,7 @@ function CipherPuzzle() {
 			</div>
 
 			{!solved && (
-				<div className='flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
+				<div className='flex w-full max-w-xs flex-1 flex-col justify-center md:max-w-md'>
 					<div className='rounded bg-neutral-950'>
 						<p className='text-green p-4 text-center text-xl'>
 							{encrypt(message)}
