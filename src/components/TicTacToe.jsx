@@ -7,7 +7,7 @@ function Square({ value, onSquareClick, isWinner }) {
 	return (
 		<div
 			onClick={onSquareClick}
-			className={`flex items-center border border-neutral-50 p-4 selection:bg-transparent ${
+			className={`flex items-center justify-center border border-neutral-50 p-4 selection:bg-transparent ${
 				isWinner
 					? 'bg-yellow-400 hover:ring hover:ring-yellow-400'
 					: 'hover:bg-neutral-950 hover:ring hover:ring-yellow-400'
