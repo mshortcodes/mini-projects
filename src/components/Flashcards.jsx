@@ -59,12 +59,11 @@ function Flashcards() {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='flex w-full max-w-xs justify-center py-16 md:max-w-md'>
-				<Link to='/' className='mr-auto'>
-					<img
-						src={chevronLeft}
-						className='w-8 cursor-pointer invert filter hover:opacity-75'
-					/>
+			<div className='flex w-full max-w-xs items-center justify-center py-16 md:max-w-md'>
+				<Link
+					to='/'
+					className='mr-auto cursor-pointer p-4 hover:opacity-75'>
+					<img src={chevronLeft} className='w-8 invert filter ' />
 				</Link>
 				<h1 className='absolute text-xl text-neutral-50'>Flashcards</h1>
 			</div>

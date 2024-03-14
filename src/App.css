@@ -12,11 +12,17 @@ body {
 }
 
 @layer utilities {
+	/* memory card game trophy */
 	.text-trophy-xl {
 		font-size: 10rem;
 	}
 
 	.text-trophy-xxl {
 		font-size: 15rem;
+	}
+
+	/* cipher puzzle green text */
+	.text-green {
+		color: #00ff00;
 	}
 }

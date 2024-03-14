@@ -65,12 +65,11 @@ function TicTacToe() {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='flex w-full max-w-xs justify-center py-16 md:max-w-md'>
-				<Link to='/' className='mr-auto'>
-					<img
-						src={chevronLeft}
-						className='w-8 cursor-pointer invert filter hover:opacity-75'
-					/>
+			<div className='flex w-full max-w-xs items-center justify-center py-16 md:max-w-md'>
+				<Link
+					to='/'
+					className='mr-auto cursor-pointer p-4 hover:opacity-75'>
+					<img src={chevronLeft} className='w-8 invert filter ' />
 				</Link>
 				<h1 className='absolute text-xl text-neutral-50'>
 					Tic-Tac-Toe
@@ -134,12 +133,12 @@ function TicTacToe() {
 							xmlns='http://www.w3.org/2000/svg'
 							fill='none'
 							viewBox='0 0 24 24'
-							stroke-width='1.5'
+							strokeWidth='1.5'
 							stroke='currentColor'
 							className='w-8 cursor-pointer text-neutral-50 hover:opacity-75'>
 							<path
-								stroke-linecap='round'
-								stroke-linejoin='round'
+								strokeLinecap='round'
+								strokeLinejoin='round'
 								d='M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99'
 							/>
 						</svg>

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home.jsx';
-import ToDoList from './components/ToDoList.jsx';
+import CipherPuzzle from './components/CipherPuzzle.jsx';
 import TicTacToe from './components/TicTacToe.jsx';
 import WeatherApp from './components/WeatherApp.jsx';
 import MemoryCardGame from './components/MemoryCardGame.jsx';
@@ -12,7 +12,7 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Home />}></Route>
-				<Route path='/to-do-list' element={<ToDoList />}></Route>
+				<Route path='/cipher-puzzle' element={<CipherPuzzle />}></Route>
 				<Route path='/tic-tac-toe' element={<TicTacToe />}></Route>
 				<Route path='/weather-app' element={<WeatherApp />}></Route>
 				<Route
