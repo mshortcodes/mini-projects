@@ -40,7 +40,7 @@ function CipherPuzzle() {
 	const navigate = useNavigate();
 
 	const handleClick = () => {
-		if (input.toLowerCase() === message.toLowerCase()) {
+		if (input.toLowerCase().trim() === message.toLowerCase().trim()) {
 			setSolved(true);
 			setTimeout(() => {
 				navigate('/');
@@ -50,6 +50,13 @@ function CipherPuzzle() {
 			setTimeout(() => {
 				setShowError(false);
 			}, 2000);
+		}
+	};
+
+	const handleEnter = (event) => {
+		if (event.key === 'Enter') {
+			event.preventDefault();
+			handleClick();
 		}
 	};
 
@@ -78,6 +85,7 @@ function CipherPuzzle() {
 					<textarea
 						value={input}
 						onChange={handleChange}
+						onKeyDown={handleEnter}
 						rows='1'
 						className='my-10 h-40 w-full resize-none overflow-hidden rounded border border-neutral-50 bg-neutral-700 p-4 text-xl text-neutral-50 outline-none placeholder:text-neutral-400 focus:border-yellow-400'
 						placeholder='Decipher the message here'></textarea>
