@@ -68,7 +68,7 @@ function TicTacToe() {
 			<div className='flex w-full max-w-xs items-center justify-center py-16 md:max-w-md'>
 				<Link
 					to='/'
-					className='mr-auto cursor-pointer p-4 hover:opacity-75'>
+					className='mr-auto cursor-pointer hover:opacity-75'>
 					<img src={chevronLeft} className='w-8 invert filter ' />
 				</Link>
 				<h1 className='absolute text-xl text-neutral-50'>
