@@ -115,7 +115,7 @@ const WeatherApp = () => {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='absolute z-50 z-50 flex w-full max-w-xs items-center justify-center py-16 md:max-w-md'>
+			<div className='flex w-full max-w-xs items-center justify-center py-16 md:max-w-md'>
 				<Link
 					to='/'
 					className='mr-auto cursor-pointer p-4 hover:opacity-75'>
@@ -126,12 +126,12 @@ const WeatherApp = () => {
 				</h1>
 			</div>
 
-			<div className='relative flex w-full max-w-xs flex-1 flex-col justify-center md:max-w-md'>
+			<div className='relative flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
 				{!weatherData && (
 					<img
 						src={umbrella}
 						alt='umbrella'
-						className='absolute left-0 right-0 top-52 mx-auto w-1/2'
+						className='absolute left-0 right-0 top-4 mx-auto w-1/2'
 					/>
 				)}
 				<div className='relative'>
