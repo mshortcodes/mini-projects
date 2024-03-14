@@ -62,10 +62,10 @@ function CipherPuzzle() {
 	return (
 		<div
 			className={`flex h-screen flex-col items-center transition-colors duration-1000 ${solved && 'bg-black'}`}>
-			<div className='relative flex w-full max-w-md items-center justify-center py-16'>
+			<div className='relative flex w-full max-w-md items-center justify-center py-20'>
 				<Link
 					to='/'
-					className='mr-auto cursor-pointer p-2 hover:opacity-75'>
+					className='absolute -left-4 mr-auto cursor-pointer p-4 hover:opacity-75'>
 					<img src={chevronLeft} className='w-7 invert filter' />
 				</Link>
 				<h1 className='absolute text-xl text-neutral-50'>

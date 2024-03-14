@@ -65,10 +65,10 @@ function TicTacToe() {
 
 	return (
 		<div className='flex h-screen flex-col items-center'>
-			<div className='flex w-full max-w-xs items-center justify-center py-16 md:max-w-md'>
+			<div className='relative flex w-full max-w-xs items-center justify-center py-20 md:max-w-md'>
 				<Link
 					to='/'
-					className='mr-auto cursor-pointer p-2 hover:opacity-75'>
+					className='absolute -left-4 mr-auto cursor-pointer p-4 hover:opacity-75'>
 					<img src={chevronLeft} className='w-7 invert filter ' />
 				</Link>
 				<h1 className='absolute text-xl text-neutral-50'>
