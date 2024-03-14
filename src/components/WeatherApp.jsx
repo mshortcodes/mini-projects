@@ -119,21 +119,14 @@ const WeatherApp = () => {
 				<Link
 					to='/'
 					className='mr-auto cursor-pointer hover:opacity-75'>
-					<img src={chevronLeft} className='w-8 invert filter ' />
+					<img src={chevronLeft} className='w-7 invert filter' />
 				</Link>
 				<h1 className='absolute text-xl text-neutral-50'>
 					Weather App
 				</h1>
 			</div>
 
-			<div className='relative flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
-				{!weatherData && (
-					<img
-						src={umbrella}
-						alt='umbrella'
-						className='absolute left-0 right-0 top-4 mx-auto w-1/2'
-					/>
-				)}
+			<div className='flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
 				<div className='relative'>
 					<input
 						value={locationInput}
@@ -146,6 +139,13 @@ const WeatherApp = () => {
 						className='absolute right-2 top-1 text-2xl selection:bg-transparent hover:opacity-75'>
 						🔍
 					</button>
+					{!weatherData && (
+						<img
+							src={umbrella}
+							alt='umbrella'
+							className='mx-auto my-14 w-1/2'
+						/>
+					)}
 				</div>
 				{weatherData && (
 					<>

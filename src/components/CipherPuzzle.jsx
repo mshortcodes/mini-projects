@@ -66,7 +66,7 @@ function CipherPuzzle() {
 				<Link
 					to='/'
 					className='mr-auto cursor-pointer hover:opacity-75'>
-					<img src={chevronLeft} className='w-8 invert filter' />
+					<img src={chevronLeft} className='w-7 invert filter' />
 				</Link>
 				<h1 className='absolute text-xl text-neutral-50'>
 					Cipher Puzzle
