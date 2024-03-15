@@ -4,6 +4,7 @@ import chevronLeft from '../assets/chevronLeft.svg';
 
 function CipherPuzzle() {
 	const message = 'This is a Caesar cipher';
+	const clue = 'a = d';
 
 	function encrypt(message) {
 		const alphabet = 'abcdefghijklmnopqrstuvwxyz';
@@ -35,6 +36,7 @@ function CipherPuzzle() {
 
 	const [solved, setSolved] = useState(false);
 	const [showError, setShowError] = useState(false);
+	const [showClue, setShowClue] = useState(false);
 
 	const navigate = useNavigate();
 
@@ -59,6 +61,10 @@ function CipherPuzzle() {
 		}
 	};
 
+	const handleShowClue = () => {
+		setShowClue(true);
+	};
+
 	return (
 		<div
 			className={`flex h-screen flex-col items-center transition-colors duration-1000 ${solved && 'bg-black'}`}>
@@ -75,10 +81,21 @@ function CipherPuzzle() {
 
 			{!solved && (
 				<div className='flex w-full max-w-xs flex-1 flex-col justify-center pb-40 md:max-w-md'>
-					<div className='rounded bg-neutral-950'>
-						<p className='text-green p-4 text-center text-xl'>
+					<div className='relative flex flex-col items-center space-y-2 rounded bg-neutral-950 p-4'>
+						<p className='text-green justify-center px-4 text-center text-xl md:px-0'>
 							{encrypt(message)}
 						</p>
+						{showClue ? (
+							<p className='justify-center italic text-yellow-400'>
+								{clue}
+							</p>
+						) : (
+							<button
+								onClick={handleShowClue}
+								className='absolute bottom-0 right-0 p-4 text-xl hover:opacity-75'>
+								🗝️
+							</button>
+						)}
 					</div>
 
 					<textarea
@@ -104,7 +121,7 @@ function CipherPuzzle() {
 
 			{solved && (
 				<div className='flex flex-1 items-center pb-40'>
-					<p className='text-2xl text-yellow-400'>
+					<p className='text-xl text-yellow-400 md:text-2xl'>
 						🎉 Correct! Good job! 🎉
 					</p>
 				</div>
