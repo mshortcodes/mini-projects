@@ -8,7 +8,7 @@
     -   [Challenges](#challenges)
     -   [What I Learned](#what-i-learned)
 -   [Features](#features)
-    -   [To-Do List](#to-do-list)
+    -   [Cipher Puzzle](#cipher-puzzle)
     -   [Tic-Tac-Toe](#tic-tac-toe)
     -   [Weather App](#weather-app)
     -   [Memory Card Game](#memory-card-game)
