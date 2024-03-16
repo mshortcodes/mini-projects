@@ -22,7 +22,7 @@
 
 Mini Projects consists of 5 projects:
 
--   To-Do list
+-   Cipher Puzzle
 -   Tic-Tac-Toe
 -   Weather App
 -   Memory Card Game
@@ -32,15 +32,15 @@ Mini Projects consists of 5 projects:
 
 ### Tools
 
-<img src='./public/vite.svg' width='100' alt='vite logo' />&nbsp;
+<img src='./public/readme-images/vite.svg' width='100' alt='vite logo' />&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width='100' alt='react logo' />&nbsp;
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" width='100' alt='tailwind logo' />
 
 ### Design
 
-I originally began working on these projects with vanilla JS and had completed four of them. However, it looked horrible. I can copy other designs but creating them myself is not my specialty. This is when I realized just diving in coding without a particular design or layout in mind is not the best idea.
+I originally began working on these projects with vanilla JS and had completed four of them. However, it looked horrible. I can copy other designs but creating them myself is not my forte. This is when I realized just diving in coding without a particular design or layout in mind is not the best idea.
 
-So, the design I implemented came from inspiration from a YouTuber I follow, ForrestKnight. He had created a mini-game website which I thought looked great with a minimal design. My projects are different than his except for the memory card game.
+So, the design I implemented came from inspiration from a YouTuber I follow, ForrestKnight. He had created a mini-game website which I thought looked great with a minimal design. I used his design as a guide, although I wasn't aiming for an exact clone. I just used it as a reference. I also implemented two of his project ideas, the cipher and the memory card game.
 
 I worked mostly on functionality for these projects. I used React to have seamless transitions between the projects and also for state management. The router allowed for an easy way to create a single-page app. It also helped with organization as each project is a separate component.
 
@@ -52,7 +52,7 @@ One of the harder challenges I faced was with the weather app. I had almost no e
 
 ### What I Learned
 
-While these projects took longer and were harder than I had originally expected, I still enjoyed the process. I found myself working on them before and after work. They didn't seem like work, but were fun. When I got stuck, I first tried my best to figure it myself. If I couldn't, then I used ChatGPT as my main go-to resource. It's very nice having an all-in-one resource instead of me having to search on Google, find the best resource, etc. I had to resort to it many times with questions such as, "How do I use fetch() in js?", "Remind me what useEffect does and its syntax", etc.
+While these projects took longer and were harder than I had originally expected, I still enjoyed the process. I found myself working on them whenever I had time. When I got stuck, I first tried my best to figure it myself. If I couldn't, then I used ChatGPT as my main go-to resource. It's very nice having an all-in-one resource instead of me having to search on Google, find the best resource, look through MDN, etc. I had to resort to it many times with questions such as, "How do I use fetch()?", "Remind me what useEffect does and its syntax", etc.
 
 This was also my first time using Tailwind and I love it. It makes writing CSS so much easier. I don't have to think of class names, worry about specificity, write out long media queries, etc. I also appreciate how it lets you know the exact CSS it's using when hovering over its classes.
 
@@ -67,23 +67,87 @@ Concepts learned/practiced:
 
 # Features
 
-### To-Do List
+### Cipher Puzzle
 
-<img src='./public/readme-images/to-do-list.png' alt='to-do list' />
+<img src='./public/readme-images/cipher-puzzle.png' alt='cipher puzzle' />
 
-I got the idea for this project from Google. Its functionality is basic. You can type, add a task, delete the last task in the list, or delete a specific task by clicking the ❌.
+My first mini-project was actually a to-do list. Later, I changed it to be this cipher puzzle which was more interesting to me. I got the idea from ForrestKnight.
+
+This is a fun challenge which showcases a Caesar cipher. It shifts each letter in the alphabet by three. The letter a, for example, would become d. I created a function, encrypt(), which will encrypt the message. This takes in a string and uses a nested loop to shift each letter by adding three to its index if it's in the alphabet. I used the modulo operator for when the shifted index would exceed 25. This prevents trying to access out-of-bounds letters which would result in undefined.
+
+```js
+function encrypt(message) {
+	const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+	let encryptedMessage = '';
+
+	for (let i = 0; i < message.length; i++) {
+		if (message[i] === ' ') {
+			encryptedMessage += ' ';
+			continue;
+		}
+
+		for (let j = 0; j < alphabet.length; j++) {
+			if (message[i].toLowerCase() === alphabet[j]) {
+				const shiftedIndex = (j + 3) % alphabet.length;
+				encryptedMessage += alphabet[shiftedIndex];
+				break;
+			}
+		}
+	}
+
+	return encryptedMessage;
+}
+```
+
+I used the useState hook to keep track of state for the input, error, clue, and solved status. When solved, the setTimeout function will activate after 2 seconds, and useNavigate will return the user to the home page.
+
+```js
+const handleClick = () => {
+	if (input.toLowerCase().trim() === message.toLowerCase().trim()) {
+		setSolved(true);
+		setTimeout(() => {
+			navigate('/');
+		}, 2000);
+	} else {
+		setShowError(true);
+		setTimeout(() => {
+			setShowError(false);
+		}, 2000);
+	}
+};
+```
+
+Writing in JSX and using Tailwind was convenient because it allowed me to write all my HTML, JS, and CSS (tailwind) in a single file. It's also nice to easily incorporate conditional rendering. Here's an example of displaying the error when its state is true, and the button when it's false.
+
+```jsx
+        {showError ? (
+	        <p className='p-2 text-center text-xl font-semibold text-red-500'>
+		        Wrong answer. Try again!
+	        </p>
+        ) : (
+	        <button
+		        onClick={handleClick}
+		        className='mx-auto w-1/2 rounded bg-yellow-400 p-2 text-xl font-semibold hover:opacity-75'>
+		        Decipher
+	        </button>
+        )}
+    </div>
+)}
+```
 
 Features:
 
--   enter key event listener/handler
--   click event listener/handler
--   state management
+-   clue reveal by clicking on key
+-   error message when wrong answer is submitted
+-   congratulations page when solved which transitions back home
+-   basic validation
+-   useState, useNavigate hooks
 
 ### Tic-Tac-Toe
 
 <img src='./public/readme-images/tic-tac-toe.png' alt='tic-tac-toe' />
 
-This project was built on from the tic-tac-toe tutorial on react.dev. I went through the tutorial awhile back and thought it would be fun to rebuild it with a better UI and extend it. While some of the logic is from the tutorial, some of it is extended. In this version, I implemented a reset feature which clears the board and resets the game's state. I also made it have conditional rendering for the winning squares so it is more obvious when winning. There is also a draw status when all squares are filled and there is no winner.
+This project was built upon from the tic-tac-toe tutorial on react.dev. I went through the tutorial awhile back and thought it would be fun to rebuild it with a better UI and extend it. While its core logic is from the tutorial, some of it is extended. In this version, I implemented a reset feature which clears the board and resets the game's state. I also made it have conditional rendering for the winning squares so it is more obvious when winning. There is also a draw status when all squares are filled and there is no winner. I used grid and flexbox for the display.
 
 Features:
 
@@ -98,13 +162,38 @@ Features:
 
 <img src='./public/readme-images/weather-app.png' alt='weather app' />
 
-This one was another idea from Google. It was a bit more involved than I had expected. I was completely unaware of how weather data is retrieved and how the location needs to use longitude and latitude. And of course the temperatures were in Kelvin.
+The idea for this app came from Google. It was a bit more involved than I had expected. I was completely unaware of how weather data is retrieved and how the location needs to use longitude and latitude. And of course the temperatures were in Kelvin.
 
-I thought it was really amazing when I got the JSON response and examined all of the data in the console. It's awesome how a few lines of code and an API key can get data on anywhere in the world. I chose to only use a couple data points and limit the country to the US as this was a mini project.
+I thought it was really amazing when I got the JSON response and examined all of the data in the console. It's awesome how a few lines of code and an API key can get data on anywhere in the world. I chose to only use a couple data points and limit the country to the US.
+
+I had to make a function to convert the temperature from Kevlin to Fahrenheit:
+
+```js
+const convertTemp = (kelvin) => {
+	return Math.round((kelvin - 273.15) * (9 / 5) + 32);
+};
+```
+
+I also used an object to store the emojis which will be dynamically rendered based on weather condition codes.
+
+```js
+const weatherEmojis = {
+	thunder: '🌩️',
+	thunderRain: '⛈️',
+	rain: '🌧️',
+	rainSun: '🌦️',
+	snow: '🌨️',
+	atmosphere: '🌫️',
+	sun: '☀️',
+	cloud: '☁️',
+	cloudSun: '⛅',
+	unknown: '❓',
+};
+```
 
 Features:
 
--   data fetching (US only)
+-   data fetching
 -   temperature conversion (Kelvin to Fahrenheit)
 -   location conversion to lon/lat
 -   conditional rendering of appropriate weather image and data itself
@@ -129,7 +218,7 @@ Features:
 
 <img src='./public/readme-images/flashcards-answer.png' alt='memory card game' />
 
-I was trying to think of a last project to include, and just randomly thought of flashcards so I went for it. I used an array of objects to store the cards. The questions and answers are toggled with a boolean. One of the challenges was cycling through ten elements/cards and not ever 'ending' the set. I had to rely on ChatGPT for helping me with the formulas:
+I was trying to think of a last project to include, and just randomly thought of flashcards so I went for it. I used an array of objects to store the cards. The questions and answers are toggled with a boolean. One of the challenges was cycling through ten elements/cards and not ever 'ending' the set. This was similar to the cipher puzzle and having the shifted index start over after reaching the end of the alphabet. I ran into a problem of the component disappearing when cycling backwards, so I relied on ChatGPT to help me alter the formula.
 
 ```js
 return (previous + 1) % flashcards.length;
