@@ -60,8 +60,9 @@ Concepts learned/practiced:
 
 -   Tailwind
 -   Toggling with booleans
--   useState, useEffect
--   Data fetching/using an API
+-   useState, useEffect, useNavigate
+-   React router
+-   Data fetching from the OpenWeather API
 -   Conditional rendering/styling
 -   Event listening/handling
 
