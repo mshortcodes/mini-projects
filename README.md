@@ -207,6 +207,26 @@ Features:
 
 Again, inspiration for this came from ForrestKnight. I thought it would be a fun project to do as I enjoy games myself. This one was one of the more difficult projects as there were a lot of factors to consider such as if the cards match, if they don't, keeping the cards face up if they do, including a time out feature, etc.
 
+Here is the Card component which takes in various props to determine the styling and content of each card.
+
+```js
+const Card = ({ value, onClick, isFlipped, isMatched }) => {
+	return (
+		<div
+			onClick={onClick}
+			className={`flex h-20 cursor-pointer items-center justify-center rounded hover:bg-neutral-950 hover:ring hover:ring-yellow-400 md:h-24 ${
+				isFlipped
+					? 'bg-neutral-950'
+					: isMatched
+						? 'bg-neutral-950 ring ring-yellow-400'
+						: 'bg-neutral-50'
+			}`}>
+			{(isFlipped || isMatched) && value}
+		</div>
+	);
+};
+```
+
 Features:
 
 -   randomizes/shuffles the cards on mount
