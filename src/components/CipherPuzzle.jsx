@@ -11,15 +11,18 @@ function CipherPuzzle() {
 		let encryptedMessage = '';
 
 		for (let i = 0; i < message.length; i++) {
-			if (message[i] === ' ') {
-				encryptedMessage += ' ';
-				continue;
-			}
-
 			for (let j = 0; j < alphabet.length; j++) {
 				if (message[i].toLowerCase() === alphabet[j]) {
+					const isUpperCase =
+						message[i] === alphabet[j].toUpperCase();
 					const shiftedIndex = (j + 3) % alphabet.length;
-					encryptedMessage += alphabet[shiftedIndex];
+					const encryptedChar = isUpperCase
+						? alphabet[shiftedIndex].toUpperCase()
+						: alphabet[shiftedIndex];
+					encryptedMessage += encryptedChar;
+					break;
+				} else if (!alphabet.includes(message[i].toLowerCase())) {
+					encryptedMessage += message[i];
 					break;
 				}
 			}
