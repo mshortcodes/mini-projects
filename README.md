@@ -74,7 +74,7 @@ Concepts learned/practiced:
 
 My first mini-project was actually a to-do list. Later, I changed it to be this cipher puzzle which was more interesting to me. I got the idea from ForrestKnight.
 
-This is a fun challenge which showcases a Caesar cipher. It shifts each letter in the alphabet by three. The letter a, for example, would become d. I created a function, encrypt(), which will encrypt the message. This takes in a string and uses a nested loop to shift each letter by adding three to its index if it's in the alphabet. I used the modulo operator for when the shifted index would exceed 25. This prevents trying to access out-of-bounds letters which would result in undefined.
+This is a fun challenge which showcases a Caesar cipher. It shifts each letter in the alphabet by three. The letter a, for example, would become d. I created a function, encrypt(), which will encrypt the message. This takes in a string and uses a nested loop to shift each letter by adding three to its index if it's in the alphabet. I used the modulo operator for when the shifted index would exceed 25. This prevents trying to access out-of-bounds letters which would result in undefined. This also preserves upper case letters and handles non-alphabetic characters.
 
 ```js
 function encrypt(message) {
@@ -82,15 +82,17 @@ function encrypt(message) {
 	let encryptedMessage = '';
 
 	for (let i = 0; i < message.length; i++) {
-		if (message[i] === ' ') {
-			encryptedMessage += ' ';
-			continue;
-		}
-
 		for (let j = 0; j < alphabet.length; j++) {
 			if (message[i].toLowerCase() === alphabet[j]) {
+				const isUpperCase = message[i] === alphabet[j].toUpperCase();
 				const shiftedIndex = (j + 3) % alphabet.length;
-				encryptedMessage += alphabet[shiftedIndex];
+				const encryptedChar = isUpperCase
+					? alphabet[shiftedIndex].toUpperCase()
+					: alphabet[shiftedIndex];
+				encryptedMessage += encryptedChar;
+				break;
+			} else if (!alphabet.includes(message[i].toLowerCase())) {
+				encryptedMessage += message[i];
 				break;
 			}
 		}
@@ -100,7 +102,7 @@ function encrypt(message) {
 }
 ```
 
-I used the useState hook to keep track of state for the input, error, clue, and solved status. When solved, the setTimeout function will activate after 2 seconds, and useNavigate will return the user to the home page.
+I used the useState hook to keep track of state for the input, error, clue, and solved status. When solved, the setTimeout function will activate after 2 seconds, and useNavigate will return the user to the home page. When validating the input, I didn't enforce casing and used trim() to get rid of accidental leading and trailing spaces to make solving it slightly easier.
 
 ```js
 const handleClick = () => {
